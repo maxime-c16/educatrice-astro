@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navigation, ProgressBar, GridOverlay } from '../components/Navigation';
+import { Hero, MarqueeText } from '../components/Hero';
+import { Manifeste } from '../components/Manifeste';
+import { Services } from '../components/Services';
+import { Portfolio } from '../components/Portfolio';
+import { Testimonials } from '../components/Testimonials';
+import { Contact } from '../components/Contact';
+import { Footer } from '../components/Footer';
+---
+
+<Layout>
+  <!-- Progress bar - scrolls with page -->
+  <ProgressBar client:load />
+  
+  <!-- Grid overlay - purely visual -->
+  <GridOverlay client:load />
+  
+  <!-- Navigation - needs interactivity for mobile menu -->
+  <Navigation client:load />
+  
+  <!-- Main content -->
+  <main className="relative z-10">
+    <!-- Hero - needs scroll animations -->
+    <Hero client:load />
+    
+    <!-- Marquee - continuous animation -->
+    <MarqueeText client:load text="Éducatrice · Montessori · Accompagnement · Pédagogie ·" />
+    
+    <!-- Manifeste - scroll reveal animations -->
+    <Manifeste client:visible />
+    
+    <!-- Services - scroll reveal animations -->
+    <Services client:visible />
+    
+    <!-- Portfolio - hover states and scroll reveals -->
+    <Portfolio client:visible />
+    
+    <!-- Testimonials - interactive card switching -->
+    <Testimonials client:visible />
+    
+    <!-- Contact - form interactivity -->
+    <Contact client:visible />
+    
+    <!-- Footer - minimal interactivity -->
+    <Footer client:visible />
+  </main>
+</Layout>

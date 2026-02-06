@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary: #507061;
+  --color-secondary: #9eb08b;
+  --color-accent: #c2aa6a;
+  --color-cream: #fffaea;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: linear-gradient(135deg, #fffaea 0%, #faf5e8 50%, #fffaea 100%);
+}
+
+::selection { background: rgba(158, 176, 139, 0.3); color: #507061; }
