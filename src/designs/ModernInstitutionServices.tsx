@@ -194,6 +194,17 @@ export function ModernInstitutionServices() {
           <a href="/5/legal#privacy" style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>Confidentialité</a>
         </div>
       </footer>
+
+      <style>{`
+        @media (max-width: 968px) {
+          [style*="grid-template-columns: 80px 1fr 250px"] { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+          [style*="grid-template-columns: 80px 1fr 250px"] > span:first-child { font-size: 2.5rem !important; }
+          [style*="grid-template-columns: repeat(4, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 640px) {
+          [style*="grid-template-columns: repeat(4, 1fr)"] { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </div>
   )
 }

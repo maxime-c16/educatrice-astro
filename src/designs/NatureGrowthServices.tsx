@@ -208,6 +208,12 @@ export function NatureGrowthServices() {
           <a href="/4/legal#privacy" style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Confidentialité</a>
         </div>
       </footer>
+
+      <style>{`
+        @media (max-width: 968px) {
+          [style*="grid-template-columns: 2fr 1fr"] { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </div>
   )
 }

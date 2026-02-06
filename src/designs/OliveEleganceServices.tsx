@@ -197,6 +197,14 @@ export function OliveEleganceServices() {
         <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>© 2025 APRIORIS — Danae Azorin</p>
         <a href="/2/legal" style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>Mentions légales</a>
       </footer>
+
+      <style>{`
+        @media (max-width: 968px) {
+          [style*="grid-template-columns: 100px 1fr 260px"] { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+          [style*="grid-template-columns: 100px 1fr 260px"] > div:first-child { font-size: 2.5rem !important; }
+          [style*="grid-template-columns: 100px 1fr 260px"] > div:last-child { text-align: left !important; }
+        }
+      `}</style>
     </div>
   )
 }
