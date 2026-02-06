@@ -1,20 +1,8 @@
 ---
-import OliveEleganceLegal from '../../designs/OliveEleganceLegal';
+import Layout from '../../layouts/Layout.astro'
+import OliveEleganceLegal from '../../designs/OliveEleganceLegal.tsx'
 ---
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mentions Légales | Éducatrice Spécialisée</title>
-  <meta name="description" content="Mentions légales, politique de confidentialité et gestion des cookies." />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
-</head>
-<body>
+<Layout title="Mentions légales | Éducatrice Spécialisée">
   <OliveEleganceLegal client:load />
-</body>
-</html>
+</Layout>
