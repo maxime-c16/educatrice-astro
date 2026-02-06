@@ -26,6 +26,25 @@ html, body {
   max-width: 100vw;
 }
 
+/* Force main content containers to respect viewport */
+main, section, footer, header, article, div {
+  box-sizing: border-box;
+}
+
+/* Prevent oversized elements from causing horizontal scroll */
+section > div,
+main > div,
+#hero > div,
+#manifeste > div,
+#expertises > div,
+#portfolio > div,
+#testimonials > div,
+#contact > div,
+footer > div {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* ---- TABLET BREAKPOINT (968px) ---- */
 @media (max-width: 968px) {
 
@@ -55,88 +74,119 @@ html, body {
   [style*="grid-template-columns: 1.3fr 1fr"],
   [style*="grid-template-columns: 1fr 2fr"],
   [style*="grid-template-columns: 2fr 1fr"],
-  [style*="grid-template-columns: 1fr 1.5fr"] {
+  [style*="grid-template-columns: 1fr 1.5fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns:1.2fr 1fr"],
+  [style*="grid-template-columns:1.3fr 1fr"],
+  [style*="grid-template-columns:1fr 2fr"],
+  [style*="grid-template-columns:2fr 1fr"],
+  [style*="grid-template-columns:1fr 1.5fr"] {
     grid-template-columns: 1fr !important;
   }
 
   /* --- MULTI-COLUMN GRIDS: Collapse 3-col and 4-col --- */
-  [style*="grid-template-columns: repeat(3"] {
+  /* Both spaced and unspaced inline style variants */
+  [style*="grid-template-columns: repeat(3"],
+  [style*="grid-template-columns:repeat(3"] {
     grid-template-columns: 1fr !important;
   }
-  [style*="grid-template-columns: repeat(4"] {
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns:repeat(4"] {
     grid-template-columns: repeat(2, 1fr) !important;
   }
 
   /* --- SERVICE PAGE GRIDS: 3-column service rows --- */
   [style*="grid-template-columns: 100px 1fr 260px"],
   [style*="grid-template-columns: 80px 1fr 250px"],
-  [style*="grid-template-columns: 120px 1fr auto"] {
+  [style*="grid-template-columns: 120px 1fr auto"],
+  [style*="grid-template-columns:100px 1fr 260px"],
+  [style*="grid-template-columns:80px 1fr 250px"],
+  [style*="grid-template-columns:120px 1fr auto"] {
     grid-template-columns: 1fr !important;
   }
 
   /* --- FOOTER: Collapse 4-column footer grids --- */
-  [style*="grid-template-columns: 2fr 1fr 1fr 1fr"] {
+  [style*="grid-template-columns: 2fr 1fr 1fr 1fr"],
+  [style*="grid-template-columns:2fr 1fr 1fr 1fr"] {
     grid-template-columns: 1fr 1fr !important;
     gap: 2rem !important;
   }
 
   /* --- SECTION PADDING: Reduce horizontal padding --- */
-  [style*="padding: 8rem 3rem"] {
+  [style*="padding: 8rem 3rem"],
+  [style*="padding:8rem 3rem"] {
     padding: 4rem 1.25rem !important;
   }
-  [style*="padding: 6rem 3rem"] {
+  [style*="padding: 6rem 3rem"],
+  [style*="padding:6rem 3rem"] {
     padding: 3rem 1.25rem !important;
   }
-  [style*="padding: 5rem 3rem"] {
+  [style*="padding: 5rem 3rem"],
+  [style*="padding:5rem 3rem"] {
     padding: 3rem 1.25rem !important;
   }
-  [style*="padding: 4rem 3rem"] {
+  [style*="padding: 4rem 3rem"],
+  [style*="padding:4rem 3rem"] {
     padding: 2.5rem 1.25rem !important;
   }
   [style*="padding: 3rem 3rem"],
   [style*="padding: 2rem 3rem"],
-  [style*="padding: 2.5rem 3rem"] {
+  [style*="padding: 2.5rem 3rem"],
+  [style*="padding:3rem 3rem"],
+  [style*="padding:2rem 3rem"],
+  [style*="padding:2.5rem 3rem"] {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
 
   /* Services/legal page headers with paddingTop offset */
-  [style*="padding: 120px 3rem"] {
+  [style*="padding: 120px 3rem"],
+  [style*="padding:120px 3rem"] {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
-  [style*="padding: 140px 3rem"] {
+  [style*="padding: 140px 3rem"],
+  [style*="padding:140px 3rem"] {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
 
   /* Individual padding-left/right for elements using longhand */
   main [style*="padding-left: 3rem"],
-  section [style*="padding-left: 3rem"] {
+  section [style*="padding-left: 3rem"],
+  main [style*="padding-left:3rem"],
+  section [style*="padding-left:3rem"] {
     padding-left: 1.25rem !important;
   }
   main [style*="padding-right: 3rem"],
-  section [style*="padding-right: 3rem"] {
+  section [style*="padding-right: 3rem"],
+  main [style*="padding-right:3rem"],
+  section [style*="padding-right:3rem"] {
     padding-right: 1.25rem !important;
   }
 
   /* RoyalAcademy hero left column: excessive 6rem left padding */
-  [style*="padding: 4rem 3rem 4rem 6rem"] {
+  [style*="padding: 4rem 3rem 4rem 6rem"],
+  [style*="padding:4rem 3rem 4rem 6rem"] {
     padding: 2.5rem 1.25rem !important;
     max-width: 100% !important;
     margin-left: 0 !important;
   }
 
   /* Main content area padding */
-  main[style*="padding: 2rem 3rem"] {
+  main[style*="padding: 2rem 3rem"],
+  main[style*="padding:2rem 3rem"] {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
 
   /* --- GAP: Reduce oversized gaps --- */
-  [style*="gap: 6rem"] { gap: 2rem !important; }
-  [style*="gap: 4rem"] { gap: 2rem !important; }
-  [style*="gap: 3rem"] { gap: 1.5rem !important; }
+  [style*="gap: 6rem"],
+  [style*="gap:6rem"] { gap: 2rem !important; }
+  [style*="gap: 4rem"],
+  [style*="gap:4rem"] { gap: 2rem !important; }
+  [style*="gap: 3rem"],
+  [style*="gap:3rem"] { gap: 1.5rem !important; }
 
   /* --- FOOTER FLEX: Stack footer contents --- */
   footer > div {
@@ -150,15 +200,31 @@ html, body {
     justify-content: center !important;
   }
 
-  /* --- HERO IMAGE COLUMNS: Hide decorative portrait placeholders --- */
+  /* --- HERO IMAGE COLUMNS: Reduce decorative portrait placeholders weight --- */
   #hero > div:last-child,
   section[style*="min-height: 100vh"] > div > div:last-child > div[style*="aspect-ratio"] {
-    /* Allow stacking, but reduce visual weight */
+    opacity: 0.85;
   }
 
   /* RoyalAcademy hero: hide right column (portrait + stats) */
   #hero > div[style*="position: relative"][style*="padding: 4rem"] {
     display: none !important;
+  }
+
+  /* --- PORTFOLIO & PROJECTS GRIDS: Ensure single column on tablet --- */
+  #portfolio [style*="display:grid"],
+  #portfolio [style*="display: grid"],
+  section[id*="portfolio"] [style*="display:grid"],
+  section[id*="portfolio"] [style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* --- EXPERTISE/DOMAINS SECTION: Ensure single column --- */
+  #expertises [style*="display:grid"],
+  #expertises [style*="display: grid"],
+  section[id*="expertises"] [style*="display:grid"],
+  section[id*="expertises"] [style*="display: grid"] {
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -166,17 +232,20 @@ html, body {
 @media (max-width: 640px) {
 
   /* Collapse 2-column grids fully */
-  [style*="grid-template-columns: repeat(2"] {
+  [style*="grid-template-columns: repeat(2"],
+  [style*="grid-template-columns:repeat(2"] {
     grid-template-columns: 1fr !important;
   }
 
   /* Collapse 4-column grids that were 2x2 at tablet */
-  [style*="grid-template-columns: repeat(4"] {
+  [style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns:repeat(4"] {
     grid-template-columns: 1fr !important;
   }
 
   /* Footer 4-column → single column */
-  [style*="grid-template-columns: 2fr 1fr 1fr 1fr"] {
+  [style*="grid-template-columns: 2fr 1fr 1fr 1fr"],
+  [style*="grid-template-columns:2fr 1fr 1fr 1fr"] {
     grid-template-columns: 1fr !important;
   }
 
@@ -196,7 +265,9 @@ html, body {
   }
 
   /* Smaller hero heading sizes for very small screens */
-  h1[style*="clamp(3rem"] {
+  h1[style*="clamp(3rem"],
+  h1[style*="clamp(2.5rem"],
+  h1[style*="clamp(2.75rem"] {
     font-size: clamp(2rem, 8vw, 3rem) !important;
   }
 
@@ -206,8 +277,96 @@ html, body {
     padding-right: 1rem !important;
   }
 
-  /* ModernInstitution hero stat grid: stack fully */
-  #hero [style*="grid-template-columns: repeat(2, 1fr)"] {
+  /* ModernInstitution hero stat grid: stack fully on small mobile */
+  #hero [style*="grid-template-columns: repeat(2, 1fr)"],
+  #hero [style*="grid-template-columns:repeat(2, 1fr)"] {
     grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 100% !important;
+  }
+
+  /* Ensure all grids stack on mobile */
+  [style*="display:grid"],
+  [style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Exception: Keep 2-column stat grids on mobile for compact display */
+  #hero [style*="repeat(2, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Flex items: allow wrapping */
+  [style*="display:flex"],
+  [style*="display: flex"] {
+    flex-wrap: wrap !important;
+  }
+
+  /* Reduce paddings on cards and blocks */
+  [style*="padding: 2.5rem"],
+  [style*="padding:2.5rem"] {
+    padding: 1.5rem !important;
+  }
+  [style*="padding: 4rem"],
+  [style*="padding:4rem"] {
+    padding: 2rem 1rem !important;
+  }
+
+  /* Ensure images don't overflow */
+  img, svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Fix absolute positioned elements that might overflow */
+  [style*="position: absolute"],
+  [style*="position:absolute"] {
+    max-width: 100vw !important;
+  }
+
+  /* Reduce margin-bottom on large spacings */
+  [style*="margin-bottom: 4rem"],
+  [style*="margin-bottom:4rem"] {
+    margin-bottom: 2rem !important;
+  }
+  [style*="margin-bottom: 5rem"],
+  [style*="margin-bottom:5rem"] {
+    margin-bottom: 2.5rem !important;
+  }
+}
+
+/* ---- EXTRA SMALL MOBILE (480px) ---- */
+@media (max-width: 480px) {
+  /* Even tighter typography */
+  h1 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
+  }
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem) !important;
+  }
+
+  /* Stack all buttons vertically */
+  [style*="display:flex"][style*="gap"],
+  [style*="display: flex"][style*="gap"] {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  /* Full-width buttons on mobile */
+  a[style*="padding"][style*="background"],
+  button[style*="padding"] {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* Reduce section padding even more */
+  section {
+    padding: 2rem 0.75rem !important;
+  }
+
+  /* Tighter card padding */
+  [style*="padding: 1.5rem"],
+  [style*="padding:1.5rem"] {
+    padding: 1rem !important;
   }
 }
