@@ -1,8 +1,83 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import { NatureGrowthServices } from '../../designs/nature-growth/ServicesPage.tsx'
+import { tokens } from '../../designs/nature-growth/tokens'
 ---
 
 <Layout title="Prestations | Éducatrice Spécialisée">
-  <NatureGrowthServices client:load />
+  <div style={{ fontFamily: tokens.fonts.body, background: tokens.colors.sand, color: tokens.colors.charcoal, minHeight: '100vh' }}>
+    <header style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, background: 'rgba(250, 248, 245, 0.92)', backdropFilter: 'blur(20px)' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '1.5rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <a href="/4" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <span style={{ fontSize: '1.75rem' }}>🌱</span>
+          <span style={{ fontFamily: tokens.fonts.display, fontSize: '1.5rem', fontWeight: 500, color: tokens.colors.forest }}>APRIORIS</span>
+        </a>
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          <a href="/4" style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.charcoalLight, textDecoration: 'none' }}>← Retour à l'accueil</a>
+          <a href="#contact" style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', fontWeight: 500, color: 'white', textDecoration: 'none', padding: '0.75rem 1.5rem', background: tokens.colors.forest, borderRadius: '25px' }}>Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section style={{ paddingTop: '140px', paddingBottom: '4rem', paddingLeft: '3rem', paddingRight: '3rem', background: tokens.colors.forest, color: 'white', textAlign: 'center' }}>
+      <span style={{ fontSize: '3rem', marginBottom: '1rem', display: 'block' }}>🌿</span>
+      <h1 style={{ fontFamily: tokens.fonts.display, fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 400, lineHeight: 1.2, marginBottom: '1.5rem' }}>
+        Nos <em style={{ fontStyle: 'italic', color: tokens.colors.sage }}>prestations</em>
+      </h1>
+      <p style={{ fontFamily: tokens.fonts.body, fontSize: '1.1rem', fontWeight: 300, color: 'rgba(255,255,255,0.8)', maxWidth: '550px', margin: '0 auto' }}>
+        Deux leviers complémentaires pour cultiver des pratiques professionnelles inclusives et durables.
+      </p>
+    </section>
+
+    <main style={{ maxWidth: '1100px', margin: '0 auto', padding: '4rem 3rem' }}>
+      <div style={{ padding: '3rem', background: 'white', borderRadius: '30px', marginBottom: '2rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+          <span style={{ fontSize: '2.5rem' }}>🔧</span>
+          <h2 style={{ fontFamily: tokens.fonts.display, fontSize: '1.75rem', fontWeight: 500, color: tokens.colors.charcoal }}>Ingénierie éducative et inclusive</h2>
+        </div>
+        <p style={{ fontFamily: tokens.fonts.body, fontSize: '1.05rem', fontWeight: 300, lineHeight: 1.8, color: tokens.colors.charcoalLight, marginBottom: '1.5rem' }}>Disposition construits en amont avec les professionnels, accompagnement complet de l'analyse à l'évaluation.</p>
+        <div style={{ background: tokens.colors.sand, padding: '1.5rem', borderRadius: '20px' }}>
+          <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: tokens.colors.terracotta, marginBottom: '1rem' }}>Le processus</p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <li style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.charcoalLight, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.forest }}>✓</span>Diagnostic partagé — analyse des besoins</li>
+            <li style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.charcoalLight, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.forest }}>✓</span>Co-conception — construction collaborative</li>
+            <li style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.charcoalLight, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.forest }}>✓</span>Pilotage — coordination et suivi</li>
+            <li style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.charcoalLight, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.forest }}>✓</span>Déploiement et mesure d'impact</li>
+            <li style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.charcoalLight, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.forest }}>✓</span>Évaluation, suivi et ajustements</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style={{ padding: '3rem', background: 'white', borderRadius: '30px', marginBottom: '2rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+          <span style={{ fontSize: '2.5rem' }}>📚</span>
+          <h2 style={{ fontFamily: tokens.fonts.display, fontSize: '1.75rem', fontWeight: 500, color: tokens.colors.charcoal }}>Formation et professionnalisation</h2>
+        </div>
+        <p style={{ fontFamily: tokens.fonts.body, fontSize: '1.05rem', fontWeight: 300, lineHeight: 1.8, color: tokens.colors.charcoalLight, marginBottom: '1.5rem' }}>Formations qui partent du vécu des participants pour ancrer des changements durables.</p>
+        <div style={{ background: tokens.colors.sand, padding: '1.5rem', borderRadius: '20px' }}>
+          <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: tokens.colors.terracotta, marginBottom: '1rem' }}>Le processus</p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <li style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.charcoalLight, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.forest }}>✓</span>Mise en situation et jeux de rôle</li>
+            <li style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.charcoalLight, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.forest }}>✓</span>Expression du vécu et déconstruction</li>
+            <li style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.charcoalLight, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.forest }}>✓</span>Apport théorique progressif</li>
+            <li style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.charcoalLight, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.forest }}>✓</span>Appropriation et transfert au quotidien</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <section id="contact" style={{ padding: '5rem 3rem', background: tokens.colors.cream, textAlign: 'center' }}>
+      <span style={{ fontSize: '2.5rem', marginBottom: '1rem', display: 'block' }}>💌</span>
+      <h2 style={{ fontFamily: tokens.fonts.display, fontSize: '2rem', fontWeight: 400, color: tokens.colors.charcoal, marginBottom: '1rem' }}>Cultivons votre projet ?</h2>
+      <p style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', color: tokens.colors.muted, marginBottom: '2rem' }}>Échangeons sur vos besoins et votre contexte</p>
+      <a href="mailto:contact@aprioris.fr" style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', fontWeight: 500, color: 'white', textDecoration: 'none', padding: '1rem 2.5rem', background: tokens.colors.forest, borderRadius: '30px', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>Me contacter →</a>
+    </section>
+
+    <footer style={{ padding: '2rem 3rem', background: tokens.colors.forest, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+      <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)' }}>© 2025 APRIORIS — Danae Azorin</p>
+      <div style={{ display: 'flex', gap: '2rem' }}>
+        <a href="/4/legal" style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Mentions légales</a>
+        <a href="/4/legal#privacy" style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', textDecoration: 'none' }}>Confidentialité</a>
+      </div>
+    </footer>
+  </div>
 </Layout>

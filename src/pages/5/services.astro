@@ -1,8 +1,90 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import ModernInstitutionServices from '../../designs/modern-institution/ServicesPage.tsx'
+import { tokens } from '../../designs/modern-institution/tokens'
 ---
 
 <Layout title="Prestations | Éducatrice Spécialisée">
-  <ModernInstitutionServices client:load />
+  <div style={{ fontFamily: tokens.fonts.body, background: 'white', color: tokens.colors.charcoal, minHeight: '100vh' }}>
+    <header style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, background: 'rgba(26, 54, 93, 0.97)', backdropFilter: 'blur(12px)' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '1rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <a href="/5" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ width: '40px', height: '40px', background: tokens.colors.accent, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <span style={{ fontFamily: tokens.fonts.display, fontSize: '1.25rem', fontWeight: 800, color: 'white' }}>A</span>
+          </div>
+          <span style={{ fontFamily: tokens.fonts.display, fontSize: '1rem', fontWeight: 700, color: 'white' }}>APRIORIS</span>
+        </a>
+        <nav style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+          <a href="/5" style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>← Retour</a>
+          <a href="#contact" style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', fontWeight: 600, color: tokens.colors.royal, textDecoration: 'none', padding: '0.75rem 1.5rem', background: tokens.colors.accent }}>Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section style={{ padding: '120px 3rem 4rem', background: tokens.colors.royal, color: 'white' }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ width: '60px', height: '4px', background: tokens.colors.accent, marginBottom: '2rem' }} />
+        <h1 style={{ fontFamily: tokens.fonts.display, fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 800, lineHeight: 1.2, marginBottom: '1.5rem' }}>
+          Nos <span style={{ color: tokens.colors.accent }}>prestations</span>
+        </h1>
+        <p style={{ fontFamily: tokens.fonts.body, fontSize: '1.1rem', color: 'rgba(255,255,255,0.8)', maxWidth: '550px' }}>
+          Deux leviers structurants pour transformer les pratiques professionnelles inclusives — de la conception à l'évaluation.
+        </p>
+      </div>
+    </section>
+
+    <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem 3rem 4rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '80px 1fr 250px', gap: '3rem', padding: '3rem 0', borderBottom: `1px solid ${tokens.colors.grayLight}` }}>
+        <span style={{ fontFamily: tokens.fonts.display, fontSize: '4rem', fontWeight: 300, color: tokens.colors.grayLight, lineHeight: 1 }}>01</span>
+        <div>
+          <h2 style={{ fontFamily: tokens.fonts.display, fontSize: '1.75rem', fontWeight: 700, color: tokens.colors.charcoal, marginBottom: '1rem' }}>Ingénierie éducative et inclusive</h2>
+          <p style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', color: tokens.colors.grayDark, lineHeight: 1.7, marginBottom: '2rem' }}>Conception et accompagnement structuré de dispositifs éducatifs inclusifs. Processus rigoureux allant du diagnostic à l'évaluation, en co-construction avec les acteurs de terrain.</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.grayMid, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.accent }}>✓</span>Diagnostic partagé — analyse besoins et contexte</div>
+            <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.grayMid, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.accent }}>✓</span>Co-conception collaborative des dispositifs</div>
+            <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.grayMid, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.accent }}>✓</span>Pilotage et coordination opérationnelle</div>
+            <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.grayMid, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.accent }}>✓</span>Déploiement terrain et mesure d'impact</div>
+            <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.grayMid, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.accent }}>✓</span>Évaluation, suivi et ajustements continus</div>
+          </div>
+        </div>
+        <div style={{ background: tokens.colors.gray100, padding: '1.5rem', alignSelf: 'start' }}>
+          <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: tokens.colors.grayMid, marginBottom: '0.5rem' }}>Tarification</p>
+          <p style={{ fontFamily: tokens.fonts.display, fontSize: '1.25rem', fontWeight: 700, color: tokens.colors.charcoal, marginBottom: '0.5rem' }}>Sur devis</p>
+          <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.75rem', color: tokens.colors.grayMid }}>Adapté à votre contexte</p>
+        </div>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '80px 1fr 250px', gap: '3rem', padding: '3rem 0' }}>
+        <span style={{ fontFamily: tokens.fonts.display, fontSize: '4rem', fontWeight: 300, color: tokens.colors.grayLight, lineHeight: 1 }}>02</span>
+        <div>
+          <h2 style={{ fontFamily: tokens.fonts.display, fontSize: '1.75rem', fontWeight: 700, color: tokens.colors.charcoal, marginBottom: '1rem' }}>Formation et professionnalisation</h2>
+          <p style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', color: tokens.colors.grayDark, lineHeight: 1.7, marginBottom: '2rem' }}>Formations expérientielles pour les professionnels. Pédagogie active qui part du vécu des participants pour transformer durablement les pratiques et les postures.</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.grayMid, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.accent }}>✓</span>Mise en situation et jeux de rôle</div>
+            <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.grayMid, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.accent }}>✓</span>Expression du vécu et déconstruction des représentations</div>
+            <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.grayMid, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.accent }}>✓</span>Apport théorique progressif et contextualisé</div>
+            <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.grayMid, display: 'flex', alignItems: 'center', gap: '0.5rem' }}><span style={{ color: tokens.colors.accent }}>✓</span>Appropriation, engagement et transfert au quotidien</div>
+          </div>
+        </div>
+        <div style={{ background: tokens.colors.gray100, padding: '1.5rem', alignSelf: 'start' }}>
+          <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: tokens.colors.grayMid, marginBottom: '0.5rem' }}>Tarification</p>
+          <p style={{ fontFamily: tokens.fonts.display, fontSize: '1.25rem', fontWeight: 700, color: tokens.colors.charcoal, marginBottom: '0.5rem' }}>Sur devis</p>
+          <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.75rem', color: tokens.colors.grayMid }}>Adapté à votre contexte</p>
+        </div>
+      </div>
+    </main>
+
+    <section id="contact" style={{ padding: '5rem 3rem', background: tokens.colors.royal, textAlign: 'center', color: 'white' }}>
+      <h2 style={{ fontFamily: tokens.fonts.display, fontSize: '2rem', fontWeight: 700, marginBottom: '1rem' }}>Un projet à structurer ?</h2>
+      <p style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', color: 'rgba(255,255,255,0.6)', marginBottom: '2rem' }}>Contactez-nous pour un devis personnalisé</p>
+      <a href="mailto:contact@aprioris.fr" style={{ fontFamily: tokens.fonts.body, fontSize: '0.95rem', fontWeight: 600, color: tokens.colors.royal, textDecoration: 'none', padding: '1rem 2.5rem', background: tokens.colors.accent, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>contact@aprioris.fr →</a>
+    </section>
+
+    <footer style={{ padding: '2rem 3rem', background: tokens.colors.charcoal, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+      <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>© 2025 APRIORIS — Danae Azorin</p>
+      <div style={{ display: 'flex', gap: '2rem' }}>
+        <a href="/5/legal" style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>Mentions légales</a>
+        <a href="/5/legal#privacy" style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>Confidentialité</a>
+      </div>
+    </footer>
+  </div>
 </Layout>

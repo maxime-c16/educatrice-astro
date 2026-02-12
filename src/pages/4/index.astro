@@ -1,8 +1,25 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import NatureGrowthMain from '../../designs/nature-growth/index.tsx'
+import { Navigation } from '../../designs/nature-growth/Navigation'
+import { Hero } from '../../designs/nature-growth/Hero'
+import { Manifeste } from '../../designs/nature-growth/Manifeste'
+import { Expertises } from '../../designs/nature-growth/Expertises'
+import { Portfolio } from '../../designs/nature-growth/Portfolio'
+import { Testimonials } from '../../designs/nature-growth/Testimonials'
+import { Contact } from '../../designs/nature-growth/Contact'
+import { Footer } from '../../designs/nature-growth/Footer'
+import { tokens } from '../../designs/nature-growth/tokens'
 ---
 
 <Layout title="Éducatrice Spécialisée | Nature & Croissance">
-  <NatureGrowthMain client:load />
+  <div style={{ fontFamily: tokens.fonts.body, background: tokens.colors.cream, color: tokens.colors.charcoal }} client:load>
+    <Navigation client:load />
+    <Hero client:load />
+    <Manifeste client:load />
+    <Expertises client:load />
+    <Portfolio client:load />
+    <Testimonials client:load />
+    <Contact client:load />
+    <Footer client:load />
+  </div>
 </Layout>

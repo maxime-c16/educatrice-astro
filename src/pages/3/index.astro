@@ -1,8 +1,25 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import RoyalAcademyMain from '../../designs/royal-academy/index.tsx'
+import { Navigation } from '../../designs/royal-academy/Navigation'
+import { Hero } from '../../designs/royal-academy/Hero'
+import { Manifeste } from '../../designs/royal-academy/Manifeste'
+import { Expertises } from '../../designs/royal-academy/Expertises'
+import { Portfolio } from '../../designs/royal-academy/Portfolio'
+import { Testimonials } from '../../designs/royal-academy/Testimonials'
+import { Contact } from '../../designs/royal-academy/Contact'
+import { Footer } from '../../designs/royal-academy/Footer'
+import { tokens } from '../../designs/royal-academy/tokens'
 ---
 
 <Layout title="Éducatrice Spécialisée | Royal Academy">
-  <RoyalAcademyMain client:load />
+  <div style={{ fontFamily: tokens.fonts.body, background: tokens.colors.cream, color: tokens.colors.charcoal }}>
+    <Navigation client:load />
+    <Hero client:load />
+    <Manifeste client:load />
+    <Expertises client:load />
+    <Portfolio client:load />
+    <Testimonials client:load />
+    <Contact client:load />
+    <Footer client:load />
+  </div>
 </Layout>

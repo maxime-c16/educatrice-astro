@@ -1,8 +1,25 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import ModernInstitutionMain from '../../designs/modern-institution/index.tsx'
+import { Navigation } from '../../designs/modern-institution/Navigation'
+import { Hero } from '../../designs/modern-institution/Hero'
+import { Manifeste } from '../../designs/modern-institution/Manifeste'
+import { Expertises } from '../../designs/modern-institution/Expertises'
+import { Portfolio } from '../../designs/modern-institution/Portfolio'
+import { Testimonials } from '../../designs/modern-institution/Testimonials'
+import { Contact } from '../../designs/modern-institution/Contact'
+import { Footer } from '../../designs/modern-institution/Footer'
+import { tokens } from '../../designs/modern-institution/tokens'
 ---
 
 <Layout title="Éducatrice Spécialisée | Modern Institution">
-  <ModernInstitutionMain client:load />
+  <div style={{ fontFamily: tokens.fonts.body, background: tokens.colors.offWhite, color: tokens.colors.text }} client:load>
+    <Navigation client:load />
+    <Hero client:load />
+    <Manifeste client:load />
+    <Expertises client:load />
+    <Portfolio client:load />
+    <Testimonials client:load />
+    <Contact client:load />
+    <Footer client:load />
+  </div>
 </Layout>

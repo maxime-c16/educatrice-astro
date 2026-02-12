@@ -1,8 +1,29 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import OliveEleganceMain from '../../designs/olive-elegance/index.tsx'
+import { Navigation } from '../../designs/olive-elegance/Navigation'
+import { Hero } from '../../designs/olive-elegance/Hero'
+import { Manifeste } from '../../designs/olive-elegance/Manifeste'
+import { Expertises } from '../../designs/olive-elegance/Expertises'
+import { Portfolio } from '../../designs/olive-elegance/Portfolio'
+import { Ecosystem } from '../../designs/olive-elegance/Ecosystem'
+import { Testimonials } from '../../designs/olive-elegance/Testimonials'
+import { Contact } from '../../designs/olive-elegance/Contact'
+import { Footer } from '../../designs/olive-elegance/Footer'
+import { tokens } from '../../designs/olive-elegance/tokens'
 ---
 
 <Layout title="Éducatrice Spécialisée | Olive Elegance">
-  <OliveEleganceMain client:load />
+  <div style={{ fontFamily: tokens.fonts.body, background: tokens.colors.cream, color: tokens.colors.charcoal, minHeight: '100vh' }} client:load>
+    <Navigation client:load />
+    <main>
+      <Hero client:load />
+      <Manifeste client:load />
+      <Expertises client:load />
+      <Portfolio client:load />
+      <Ecosystem client:load />
+      <Testimonials client:load />
+      <Contact client:load />
+    </main>
+    <Footer client:load />
+  </div>
 </Layout>

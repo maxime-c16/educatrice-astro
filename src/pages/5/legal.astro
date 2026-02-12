@@ -1,8 +1,75 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import ModernInstitutionLegal from '../../designs/modern-institution/LegalPage.tsx'
+import { tokens } from '../../designs/modern-institution/tokens'
 ---
 
 <Layout title="Mentions légales | Éducatrice Spécialisée">
-  <ModernInstitutionLegal client:load />
+  <div style={{ fontFamily: tokens.fonts.body, background: 'white', color: tokens.colors.charcoal, minHeight: '100vh' }}>
+    <header style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, background: 'rgba(26, 54, 93, 0.97)', backdropFilter: 'blur(12px)' }}>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '1rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <a href="/5" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ width: '40px', height: '40px', background: tokens.colors.accent, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <span style={{ fontFamily: tokens.fonts.display, fontSize: '1.25rem', fontWeight: 800, color: 'white' }}>A</span>
+          </div>
+          <span style={{ fontFamily: tokens.fonts.display, fontSize: '1rem', fontWeight: 700, color: 'white' }}>APRIORIS</span>
+        </a>
+        <a href="/5" style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>← Retour à l'accueil</a>
+      </div>
+    </header>
+
+    <main style={{ maxWidth: '800px', margin: '0 auto', padding: '120px 3rem 4rem' }}>
+      <div style={{ width: '60px', height: '4px', background: tokens.colors.accent, marginBottom: '2rem' }} />
+      <h1 style={{ fontFamily: tokens.fonts.display, fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 800, color: tokens.colors.charcoal, marginBottom: '1rem' }}>
+        Informations <span style={{ color: tokens.colors.royal }}>légales</span>
+      </h1>
+      <p style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', color: tokens.colors.grayMid, marginBottom: '3rem' }}>Conformité et transparence</p>
+
+      <div style={{ display: 'flex', gap: '1rem', marginBottom: '4rem', padding: '1.5rem', background: tokens.colors.gray100 }}>
+        <a href="#mentions" style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', fontWeight: 500, color: tokens.colors.royal, textDecoration: 'none', padding: '0.5rem 1rem', background: 'white' }}>Mentions légales</a>
+        <a href="#privacy" style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', fontWeight: 500, color: tokens.colors.royal, textDecoration: 'none', padding: '0.5rem 1rem', background: 'white' }}>Confidentialité</a>
+        <a href="#cookies" style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', fontWeight: 500, color: tokens.colors.royal, textDecoration: 'none', padding: '0.5rem 1rem', background: 'white' }}>Cookies</a>
+      </div>
+
+      <section id="mentions" style={{ marginBottom: '4rem' }}>
+        <h2 style={{ fontFamily: tokens.fonts.display, fontSize: '1.5rem', fontWeight: 700, color: tokens.colors.charcoal, marginBottom: '1.5rem', paddingBottom: '0.75rem', borderBottom: `2px solid ${tokens.colors.accent}`, display: 'inline-block' }}>Mentions légales</h2>
+        <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.95rem', color: tokens.colors.grayDark, lineHeight: 1.8 }}>
+          <h3 style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', fontWeight: 600, color: tokens.colors.charcoal, marginTop: '1.5rem', marginBottom: '0.75rem' }}>Éditeur</h3>
+          <p><strong>Nom :</strong> Danae Azorin — APRIORIS<br /><strong>Statut :</strong> Micro-entreprise<br /><strong>SIRET :</strong> XXX XXX XXX XXXXX<br /><strong>Adresse :</strong> [Adresse professionnelle]<br /><strong>Contact :</strong> contact@aprioris.fr</p>
+          <h3 style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', fontWeight: 600, color: tokens.colors.charcoal, marginTop: '1.5rem', marginBottom: '0.75rem' }}>Hébergement</h3>
+          <p>[Nom de l'hébergeur]<br />[Adresse de l'hébergeur]</p>
+        </div>
+      </section>
+
+      <section id="privacy" style={{ marginBottom: '4rem' }}>
+        <h2 style={{ fontFamily: tokens.fonts.display, fontSize: '1.5rem', fontWeight: 700, color: tokens.colors.charcoal, marginBottom: '1.5rem', paddingBottom: '0.75rem', borderBottom: `2px solid ${tokens.colors.accent}`, display: 'inline-block' }}>Confidentialité</h2>
+        <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.95rem', color: tokens.colors.grayDark, lineHeight: 1.8 }}>
+          <h3 style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', fontWeight: 600, color: tokens.colors.charcoal, marginTop: '1.5rem', marginBottom: '0.75rem' }}>Données collectées</h3>
+          <p>Données transmises via formulaire: nom, email, téléphone, message.</p>
+          <h3 style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', fontWeight: 600, color: tokens.colors.charcoal, marginTop: '1.5rem', marginBottom: '0.75rem' }}>Utilisation</h3>
+          <p>Réponse aux demandes • Information sur prestations • Gestion relation professionnelle</p>
+          <h3 style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', fontWeight: 600, color: tokens.colors.charcoal, marginTop: '1.5rem', marginBottom: '0.75rem' }}>Conservation</h3>
+          <p>3 ans après dernier contact, conformément à la réglementation.</p>
+          <h3 style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', fontWeight: 600, color: tokens.colors.charcoal, marginTop: '1.5rem', marginBottom: '0.75rem' }}>Vos droits</h3>
+          <p>Accès, rectification, suppression, portabilité. Contact: contact@aprioris.fr</p>
+        </div>
+      </section>
+
+      <section id="cookies" style={{ marginBottom: '4rem' }}>
+        <h2 style={{ fontFamily: tokens.fonts.display, fontSize: '1.5rem', fontWeight: 700, color: tokens.colors.charcoal, marginBottom: '1.5rem', paddingBottom: '0.75rem', borderBottom: `2px solid ${tokens.colors.accent}`, display: 'inline-block' }}>Cookies & RGPD</h2>
+        <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.95rem', color: tokens.colors.grayDark, lineHeight: 1.8 }}>
+          <h3 style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', fontWeight: 600, color: tokens.colors.charcoal, marginTop: '1.5rem', marginBottom: '0.75rem' }}>Définition</h3>
+          <p>Fichiers texte stockés sur votre appareil pour améliorer votre expérience.</p>
+          <h3 style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', fontWeight: 600, color: tokens.colors.charcoal, marginTop: '1.5rem', marginBottom: '0.75rem' }}>Types utilisés</h3>
+          <p><strong>Nécessaires :</strong> Fonctionnement du site<br /><strong>Analytiques :</strong> Mesure audience anonyme (si applicable)</p>
+        </div>
+      </section>
+
+      <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', color: tokens.colors.grayMid, marginTop: '2rem', paddingTop: '2rem', borderTop: `1px solid ${tokens.colors.grayLight}` }}>Dernière mise à jour : Juin 2025</p>
+    </main>
+
+    <footer style={{ padding: '2rem 3rem', background: tokens.colors.charcoal, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+      <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>© 2025 APRIORIS — Danae Azorin</p>
+      <a href="/5" style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>Retour à l'accueil</a>
+    </footer>
+  </div>
 </Layout>
