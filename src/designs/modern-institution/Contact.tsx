@@ -15,7 +15,7 @@ export function Contact() {
           </h2>
           <p style={{
             fontFamily: tokens.fonts.body, fontSize: '1.1rem', fontWeight: 300,
-            color: 'rgba(255,255,255,0.7)', maxWidth: '500px', margin: '0 auto 3rem',
+            color: tokens.colors.whiteOpaque70, maxWidth: '500px', margin: '0 auto 3rem',
           }}>
             Chaque contexte est unique. Échangeons pour co-construire un dispositif adapté à vos besoins et contraintes.
           </p>

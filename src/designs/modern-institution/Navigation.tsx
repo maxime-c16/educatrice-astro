@@ -9,7 +9,7 @@ export function Navigation() {
     <>
       <header style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-        background: 'rgba(26, 54, 93, 0.97)', backdropFilter: 'blur(12px)',
+        background: tokens.colors.darkOpaque97, backdropFilter: 'blur(12px)',
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '1rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <a href="/5" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -33,7 +33,7 @@ export function Navigation() {
               { label: 'Avis', href: '#testimonials' },
             ].map((item) => (
               <a key={item.href} href={item.href}
-                style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', fontWeight: 500, color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
+                style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', fontWeight: 500, color: tokens.colors.whiteOpaque70, textDecoration: 'none' }}
               >{item.label}</a>
             ))}
             <a href="/5/services" style={{

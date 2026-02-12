@@ -24,6 +24,23 @@ export const tokens = {
     // Text
     text: 'oklch(18% 0.03 285)',            // Primary text
 
+    // White with opacity variants (for transparent overlays)
+    whiteOpaque95: 'rgba(255,255,255,0.95)',
+    whiteOpaque70: 'rgba(255,255,255,0.7)',
+    whiteOpaque50: 'rgba(255,255,255,0.5)',
+    whiteOpaque40: 'rgba(255,255,255,0.4)',
+    whiteOpaque30: 'rgba(255,255,255,0.3)',
+    whiteOpaque08: 'rgba(255,255,255,0.08)',
+    whiteOpaque03: 'rgba(255,255,255,0.03)',
+
+    // Accent with opacity variants
+    accentWithOpacity15: 'rgba(237, 137, 54, 0.15)',
+    accentWithOpacity10: 'rgba(237, 137, 54, 0.1)',
+
+    // Dark overlay variants
+    darkOpaque97: 'rgba(26, 54, 93, 0.97)',
+    darkOpaque60: 'rgba(0,0,0,0.6)',
+
     // Interactive states
     error: 'oklch(55% 0.20 30)',            // Red for errors
     success: 'oklch(60% 0.15 150)',         // Green for success

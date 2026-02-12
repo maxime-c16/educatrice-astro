@@ -17,10 +17,10 @@ export function Hero() {
       <div style={{
         position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
         backgroundImage: `
-          linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-          linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-          linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%),
-          linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%)
+          linear-gradient(45deg, ${tokens.colors.whiteOpaque03} 25%, transparent 25%),
+          linear-gradient(-45deg, ${tokens.colors.whiteOpaque03} 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, ${tokens.colors.whiteOpaque03} 75%),
+          linear-gradient(-45deg, transparent 75%, ${tokens.colors.whiteOpaque03} 75%)
         `,
         backgroundSize: '60px 60px',
         backgroundPosition: '0 0, 0 30px, 30px -30px, -30px 0px',
@@ -36,7 +36,7 @@ export function Hero() {
             <div style={{
               fontFamily: tokens.fonts.body, fontSize: '0.75rem', fontWeight: 600,
               letterSpacing: '0.15em', textTransform: 'uppercase', color: tokens.colors.accent,
-              padding: '0.5rem 1rem', background: 'rgba(237, 137, 54, 0.15)', display: 'inline-block', marginBottom: '2rem',
+              padding: '0.5rem 1rem', background: tokens.colors.accentWithOpacity15, display: 'inline-block', marginBottom: '2rem',
             }}>16+ ans d'expertise · Multi-secteurs</div>
 
             <h1 style={{
@@ -52,7 +52,7 @@ export function Hero() {
 
             <p style={{
               fontFamily: tokens.fonts.body, fontSize: '1.1rem', fontWeight: 300,
-              lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', maxWidth: '500px', marginBottom: '2.5rem',
+              lineHeight: 1.8, color: tokens.colors.whiteOpaque70, maxWidth: '500px', marginBottom: '2.5rem',
             }}>
               Conception et accompagnement de dispositifs éducatifs et inclusifs
               à destination des professionnels. L'inclusion ne se fait pas à posteriori :
@@ -68,7 +68,7 @@ export function Hero() {
               <a href="#manifeste" style={{
                 fontFamily: tokens.fonts.body, fontSize: '0.95rem', fontWeight: 500,
                 color: 'white', textDecoration: 'none', padding: '1rem 2rem',
-                border: '2px solid rgba(255,255,255,0.3)',
+                border: `2px solid ${tokens.colors.whiteOpaque30}`,
               }}>En savoir plus</a>
             </div>
           </motion.div>
@@ -87,14 +87,14 @@ export function Hero() {
               <motion.div key={stat.label} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + i * 0.15 }}
                 style={{
-                  padding: '1.5rem', background: i === 0 ? tokens.colors.accent : 'rgba(255,255,255,0.08)',
+                  padding: '1.5rem', background: i === 0 ? tokens.colors.accent : tokens.colors.whiteOpaque08,
                   textAlign: 'center',
                 }}
               >
                 <p style={{ fontFamily: tokens.fonts.display, fontSize: '2.5rem', fontWeight: 800, color: i === 0 ? tokens.colors.royalDark : 'white', lineHeight: 1 }}>
                   {stat.value}<span style={{ fontSize: '1rem' }}>{stat.unit}</span>
                 </p>
-                <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.75rem', color: i === 0 ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.5)', marginTop: '0.25rem' }}>{stat.label}</p>
+                <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.75rem', color: i === 0 ? tokens.colors.darkOpaque60 : tokens.colors.whiteOpaque50, marginTop: '0.25rem' }}>{stat.label}</p>
               </motion.div>
             ))}
           </div>

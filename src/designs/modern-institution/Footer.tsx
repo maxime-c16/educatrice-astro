@@ -11,10 +11,10 @@ export function Footer() {
           <span style={{ fontFamily: tokens.fonts.display, fontSize: '1rem', fontWeight: 700 }}>APRIORIS</span>
         </div>
         <div style={{ display: 'flex', gap: '2rem' }}>
-          <a href="/5/legal" style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>Mentions légales</a>
-          <a href="/5/legal#privacy" style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textDecoration: 'none' }}>Confidentialité</a>
+          <a href="/5/legal" style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: tokens.colors.whiteOpaque50, textDecoration: 'none' }}>Mentions légales</a>
+          <a href="/5/legal#privacy" style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: tokens.colors.whiteOpaque50, textDecoration: 'none' }}>Confidentialité</a>
         </div>
-        <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>© 2025 APRIORIS — Danae Azorin</p>
+        <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: tokens.colors.whiteOpaque40 }}>© 2025 APRIORIS — Danae Azorin</p>
       </div>
     </footer>
   )

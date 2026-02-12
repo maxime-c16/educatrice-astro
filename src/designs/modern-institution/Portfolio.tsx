@@ -40,7 +40,7 @@ export function Portfolio() {
                 <span style={{
                   fontFamily: tokens.fonts.body, fontSize: '0.7rem', fontWeight: 600,
                   letterSpacing: '0.1em', textTransform: 'uppercase', color: tokens.colors.accent,
-                  padding: '0.4rem 0.75rem', background: 'rgba(237, 137, 54, 0.1)',
+                  padding: '0.4rem 0.75rem', background: tokens.colors.accentWithOpacity10,
                 }}>{project.sector}</span>
               </div>
             </FadeInSection>
