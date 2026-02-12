@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section id="hero" ref={ref} style={{
       minHeight: '100vh', background: tokens.colors.royal,
-      position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', paddingTop: '80px',
+      position: 'relative', display: 'flex', alignItems: 'center', paddingTop: '80px',
     }}>
       {/* Geometric background pattern */}
       <div style={{
@@ -110,3 +110,4 @@ export function Hero() {
     </section>
   )
 }
+Hero.displayName = 'Hero'

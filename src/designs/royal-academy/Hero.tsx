@@ -11,7 +11,7 @@ export function Hero() {
     <section id="hero" ref={containerRef} style={{
       minHeight: '100vh', background: tokens.colors.cream,
       display: 'grid', gridTemplateColumns: '1fr 1fr',
-      paddingTop: '80px', position: 'relative', overflow: 'hidden',
+      paddingTop: '80px', position: 'relative',
     }}>
       <div style={{
         display: 'flex', flexDirection: 'column', justifyContent: 'center',
@@ -104,3 +104,4 @@ export function Hero() {
     </section>
   )
 }
+Hero.displayName = 'Hero'

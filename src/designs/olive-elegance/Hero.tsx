@@ -16,7 +16,6 @@ export function Hero() {
         display: 'flex',
         alignItems: 'center',
         position: 'relative',
-        overflow: 'hidden',
         background: tokens.colors.cream,
       }}
     >
@@ -181,3 +180,4 @@ export function Hero() {
     </section>
   )
 }
+Hero.displayName = 'Hero'

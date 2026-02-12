@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section id="hero" ref={ref} style={{
       minHeight: '100vh', background: tokens.colors.cream, position: 'relative',
-      overflow: 'hidden', display: 'flex', alignItems: 'center', paddingTop: '80px',
+      display: 'flex', alignItems: 'center', paddingTop: '80px',
     }}>
       <div style={blobStyle(tokens.colors.sage, 600, '10%', '-10%', 20)} />
       <div style={blobStyle(tokens.colors.terracotta, 400, '60%', '70%', -15)} />
@@ -99,3 +99,4 @@ export function Hero() {
     </section>
   )
 }
+Hero.displayName = 'Hero'

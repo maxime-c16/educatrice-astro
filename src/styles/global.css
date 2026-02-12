@@ -20,9 +20,8 @@ body {
    Uses [style*=""] attribute selectors to override React inline styles
    ============================================================================ */
 
-/* Prevent horizontal scroll globally */
+/* Prevent horizontal scroll globally - REMOVED: causes scroll trapping */
 html, body {
-  overflow-x: hidden;
   max-width: 100vw;
 }
 
@@ -42,7 +41,6 @@ main > div,
 #contact > div,
 footer > div {
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 /* ---- TABLET BREAKPOINT (968px) ---- */
