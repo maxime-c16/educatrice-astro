@@ -62,3 +62,4 @@ export function Expertises() {
     </section>
   )
 }
+Expertises.displayName = 'Expertises'

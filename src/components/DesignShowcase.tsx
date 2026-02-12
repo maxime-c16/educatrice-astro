@@ -28,8 +28,8 @@ const designs: Design[] = [
     name: 'APRIORIS · Olive Elegance',
     tagline: 'Ingénierie éducative et inclusive',
     description: 'Refined editorial aesthetic with organic warmth and sophisticated palette',
-    accent: '#5c6b4a',
-    accent2: '#c9a962',
+    accent: 'oklch(52% 0.12 260)',        // Royal Serein - Bleu Serein
+    accent2: 'oklch(75% 0.08 90)',        // Or mat - Sable
     font: "'Playfair Display', serif",
     href: '/2'
   },
@@ -38,8 +38,8 @@ const designs: Design[] = [
     name: 'APRIORIS · Royal Academy',
     tagline: 'Institutional authority',
     description: 'Sophisticated academic aesthetic with prestigious heritage',
-    accent: '#1e3a5f',
-    accent2: '#d4a853',
+    accent: 'oklch(42% 0.16 272)',        // Outremer - Bleu Cobalt
+    accent2: 'oklch(70% 0.14 75)',        // Bronze Doré - Impact
     font: "'Playfair Display', serif",
     href: '/3'
   },
@@ -48,8 +48,8 @@ const designs: Design[] = [
     name: 'APRIORIS · Nature Growth',
     tagline: 'Growth metaphors',
     description: 'Organic botanical aesthetic with natural harmony',
-    accent: '#2d4a3e',
-    accent2: '#c4856a',
+    accent: 'oklch(48% 0.10 245)',        // Océan - Bleu Pétrole
+    accent2: 'oklch(72% 0.12 65)',        // Or Cuivré - Terre
     font: "'Playfair Display', serif",
     href: '/4'
   },
@@ -58,8 +58,8 @@ const designs: Design[] = [
     name: 'APRIORIS · Modern Institution',
     tagline: 'Impact-driven design',
     description: 'Bold contemporary institutional style with vibrant energy',
-    accent: '#ed8936',
-    accent2: '#1a365d',
+    accent: 'oklch(40% 0.19 285)',        // Saphir - Saphir Indigo
+    accent2: 'oklch(82% 0.10 88)',        // Champagne - Léger
     font: "'DM Sans', sans-serif",
     href: '/5'
   }

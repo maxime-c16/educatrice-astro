@@ -1,18 +1,33 @@
 export const tokens = {
   colors: {
-    forest: '#2d4a3e',
-    forestLight: '#3d6b5a',
-    moss: '#7a9a8a',
-    sage: '#a8c4b8',
-    terracotta: '#c4856a',
-    terracottaLight: '#d9a590',
-    sand: '#e8ddd4',
-    cream: '#faf8f5',
-    warmWhite: '#fffcf8',
-    charcoal: '#2a2a2a',
-    charcoalLight: '#4a4a4a',
-    muted: '#7a7a7a',
-    border: '#e5dfd8',
+    // Océan Palette - OKLCH
+    // Primary brand color (Bleu Pétrole / Océan)
+    forest: 'oklch(48% 0.10 245)',          // Primary ocean blue
+    forestLight: 'oklch(62% 0.10 245)',     // Lighter for hover states
+    royalDark: 'oklch(35% 0.08 245)',       // Darker variant
+    moss: 'oklch(55% 0.08 245)',            // Medium tone
+    sage: 'oklch(65% 0.06 245)',            // Sage variant
+
+    // Accent color (Or Cuivré - Terre/Earth)
+    terracotta: 'oklch(72% 0.12 65)',
+    terracottaLight: 'oklch(80% 0.12 65)',  // Lighter for highlights
+    terracottaDark: 'oklch(62% 0.12 65)',   // Darker for depth
+    accent: 'oklch(72% 0.12 65)',           // Alias for accent
+
+    // Backgrounds & Neutrals (sand/earth tones)
+    sand: 'oklch(96% 0.02 95)',             // Sable très clair
+    cream: 'oklch(97% 0.01 95)',            // Warm cream
+    warmWhite: 'oklch(99% 0.005 95)',       // Off-white
+
+    // Text & Borders (maintain hue harmony with ocean)
+    charcoal: 'oklch(22% 0.02 245)',        // Dark text
+    charcoalLight: 'oklch(42% 0.02 245)',   // Medium gray
+    muted: 'oklch(60% 0.02 245)',           // Light gray
+    border: 'oklch(88% 0.01 245)',          // Light border
+
+    // Interactive states
+    error: 'oklch(55% 0.20 30)',            // Red for errors
+    success: 'oklch(60% 0.15 150)',         // Green for success
   },
   fonts: {
     display: "'Playfair Display', Georgia, serif",

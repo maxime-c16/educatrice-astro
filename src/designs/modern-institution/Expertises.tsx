@@ -57,7 +57,7 @@ export function Expertises() {
             <FadeInSection key={pillar.title} delay={0.3 + i * 0.1}>
               <div style={{
                 padding: '2.5rem', background: i === 0 ? tokens.colors.royal : tokens.colors.accent,
-                color: i === 0 ? 'white' : tokens.colors.royalDark,
+                color: i === 0 ? 'oklch(99% 0.002 285)' : tokens.colors.royalDark,
               }}>
                 <h3 style={{ fontFamily: tokens.fonts.display, fontSize: '1.35rem', fontWeight: 700, marginBottom: '1.5rem' }}>
                   {pillar.title}
@@ -68,7 +68,9 @@ export function Expertises() {
                       <span style={{
                         fontFamily: tokens.fonts.display, fontSize: '0.75rem', fontWeight: 700,
                         width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        background: i === 0 ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.1)',
+                        color: i === 0 ? 'oklch(99% 0.002 285)' : tokens.colors.royalDark,
+                        background: i === 0 ? 'oklch(40% 0.10 285)' : 'oklch(88% 0.02 88)',
+                        borderRadius: '4px',
                       }}>{j + 1}</span>
                       <span style={{ fontFamily: tokens.fonts.body, fontSize: '0.95rem', fontWeight: 400 }}>{step}</span>
                     </div>
@@ -93,3 +95,4 @@ export function Expertises() {
     </section>
   )
 }
+Expertises.displayName = 'Expertises'

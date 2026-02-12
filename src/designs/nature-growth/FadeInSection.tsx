@@ -10,3 +10,4 @@ export function FadeInSection({ children, delay = 0 }: { children: React.ReactNo
     >{children}</motion.div>
   )
 }
+FadeInSection.displayName = 'FadeInSection'

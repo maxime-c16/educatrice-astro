@@ -96,5 +96,6 @@ export function OliveEleganceLegal() {
     </div>
   )
 }
+OliveEleganceLegal.displayName = 'OliveEleganceLegal'
 
 export default OliveEleganceLegal

@@ -93,22 +93,22 @@ export function Expertises() {
             >
               <h3 style={{
                 fontFamily: tokens.fonts.display, fontSize: '1.3rem', fontWeight: 500,
-                color: i === 0 ? tokens.colors.cream : tokens.colors.charcoal,
+                color: i === 0 ? 'oklch(99% 0.003 260)' : tokens.colors.charcoal,
                 marginBottom: '1rem',
               }}>{pillar.label}</h3>
               <p style={{
                 fontFamily: tokens.fonts.body, fontSize: '0.95rem', fontWeight: 300,
-                color: i === 0 ? 'rgba(255,255,255,0.8)' : tokens.colors.muted,
+                color: i === 0 ? 'oklch(95% 0.002 260)' : tokens.colors.muted,
                 lineHeight: 1.7, marginBottom: '1.5rem',
               }}>{pillar.desc}</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 {pillar.steps.map((step) => (
                   <div key={step} style={{
                     fontFamily: tokens.fonts.body, fontSize: '0.85rem',
-                    color: i === 0 ? 'rgba(255,255,255,0.7)' : tokens.colors.charcoalLight,
+                    color: i === 0 ? 'oklch(92% 0.002 260)' : tokens.colors.charcoalLight,
                     display: 'flex', alignItems: 'center', gap: '0.75rem',
                   }}>
-                    <span style={{ color: tokens.colors.gold }}>•</span>
+                    <span style={{ color: tokens.colors.accent }}>•</span>
                     {step}
                   </div>
                 ))}
@@ -127,3 +127,4 @@ export function Expertises() {
     </section>
   )
 }
+Expertises.displayName = 'Expertises'

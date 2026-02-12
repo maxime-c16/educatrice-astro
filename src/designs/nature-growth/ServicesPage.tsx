@@ -188,5 +188,6 @@ export function NatureGrowthServices() {
     </div>
   )
 }
+NatureGrowthServices.displayName = 'NatureGrowthServices'
 
 export default NatureGrowthServices

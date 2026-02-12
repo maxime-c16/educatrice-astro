@@ -207,5 +207,6 @@ export function RoyalAcademyServices() {
     </div>
   )
 }
+RoyalAcademyServices.displayName = 'RoyalAcademyServices'
 
 export default RoyalAcademyServices

@@ -58,3 +58,4 @@ export function Manifeste() {
     </section>
   )
 }
+Manifeste.displayName = 'Manifeste'

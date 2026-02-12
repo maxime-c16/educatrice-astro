@@ -94,5 +94,6 @@ export function ModernInstitutionLegal() {
     </div>
   )
 }
+ModernInstitutionLegal.displayName = 'ModernInstitutionLegal'
 
 export default ModernInstitutionLegal

@@ -61,3 +61,4 @@ export function Portfolio() {
     </section>
   )
 }
+Portfolio.displayName = 'Portfolio'

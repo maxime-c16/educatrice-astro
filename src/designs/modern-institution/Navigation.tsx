@@ -105,3 +105,4 @@ export function Navigation() {
     </>
   )
 }
+Navigation.displayName = 'Navigation'

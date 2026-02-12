@@ -94,5 +94,6 @@ export function NatureGrowthLegal() {
     </div>
   )
 }
+NatureGrowthLegal.displayName = 'NatureGrowthLegal'
 
 export default NatureGrowthLegal

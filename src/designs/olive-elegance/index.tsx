@@ -26,5 +26,6 @@ export function OliveEleganceMain() {
     </div>
   )
 }
+OliveEleganceMain.displayName = 'OliveEleganceMain'
 
 export default OliveEleganceMain

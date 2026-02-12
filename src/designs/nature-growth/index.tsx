@@ -22,5 +22,6 @@ export function NatureGrowthMain() {
     </div>
   )
 }
+NatureGrowthMain.displayName = 'NatureGrowthMain'
 
 export default NatureGrowthMain

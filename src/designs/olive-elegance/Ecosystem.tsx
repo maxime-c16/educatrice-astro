@@ -59,3 +59,4 @@ export function Ecosystem() {
     </section>
   )
 }
+Ecosystem.displayName = 'Ecosystem'

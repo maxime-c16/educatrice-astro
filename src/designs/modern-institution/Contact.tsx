@@ -32,3 +32,4 @@ export function Contact() {
     </section>
   )
 }
+Contact.displayName = 'Contact'

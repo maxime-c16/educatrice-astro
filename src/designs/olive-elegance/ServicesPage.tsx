@@ -185,5 +185,6 @@ export function OliveEleganceServices() {
     </div>
   )
 }
+OliveEleganceServices.displayName = 'OliveEleganceServices'
 
 export default OliveEleganceServices

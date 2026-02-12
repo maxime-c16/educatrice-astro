@@ -27,5 +27,6 @@ export function ModernInstitutionMain() {
     </div>
   )
 }
+ModernInstitutionMain.displayName = 'ModernInstitutionMain'
 
 export default ModernInstitutionMain

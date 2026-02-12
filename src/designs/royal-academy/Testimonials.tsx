@@ -37,3 +37,4 @@ export function Testimonials() {
     </section>
   )
 }
+Testimonials.displayName = 'Testimonials'

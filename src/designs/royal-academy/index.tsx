@@ -22,5 +22,6 @@ export function RoyalAcademyMain() {
     </div>
   )
 }
+RoyalAcademyMain.displayName = 'RoyalAcademyMain'
 
 export default RoyalAcademyMain
