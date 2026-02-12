@@ -30,7 +30,7 @@ export function Portfolio() {
             <FadeInSection key={project.title} delay={i * 0.08}>
               <div style={{
                 display: 'grid', gridTemplateColumns: '120px 1fr auto', gap: '2rem',
-                padding: '2rem', background: 'white', alignItems: 'center',
+                padding: '2rem', background: tokens.colors.white, alignItems: 'center',
               }}>
                 <span style={{ fontFamily: tokens.fonts.display, fontSize: '1.1rem', fontWeight: 700, color: tokens.colors.electric }}>{project.year}</span>
                 <div>

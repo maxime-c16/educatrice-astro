@@ -21,7 +21,7 @@ export function Navigation() {
                 background: `linear-gradient(135deg, ${tokens.colors.royal} 0%, ${tokens.colors.royalLight} 100%)`,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}>
-                <span style={{ fontFamily: tokens.fonts.display, fontSize: '1.1rem', fontWeight: 600, color: 'white' }}>A</span>
+                <span style={{ fontFamily: tokens.fonts.display, fontSize: '1.1rem', fontWeight: 600, color: tokens.colors.cream }}>A</span>
               </div>
               <div>
                 <span style={{ fontFamily: tokens.fonts.display, fontSize: '1.4rem', fontWeight: 600, color: tokens.colors.royal, display: 'block', lineHeight: 1.1, letterSpacing: '0.03em' }}>
@@ -47,7 +47,7 @@ export function Navigation() {
             ))}
             <a href="/3/services" style={{
               fontFamily: tokens.fonts.body, fontSize: '0.85rem', fontWeight: 500,
-              color: 'white', textDecoration: 'none', padding: '0.75rem 1.5rem',
+              color: tokens.colors.cream, textDecoration: 'none', padding: '0.75rem 1.5rem',
               background: tokens.colors.royal,
             }}>Prestations</a>
           </nav>

@@ -24,7 +24,7 @@ export function Testimonials() {
               Scannez le QR code pour laisser un avis Google
             </p>
             <div style={{
-              width: '120px', height: '120px', background: 'white', borderRadius: '15px',
+              width: '120px', height: '120px', background: tokens.colors.warmWhite, borderRadius: '15px',
               margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center',
               boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
             }}>

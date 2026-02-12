@@ -42,7 +42,7 @@ export function Navigation() {
               >{item.label}</a>
             ))}
             <a href="/4/services" style={{
-              fontFamily: tokens.fonts.body, fontSize: '0.9rem', fontWeight: 500, color: 'white',
+              fontFamily: tokens.fonts.body, fontSize: '0.9rem', fontWeight: 500, color: tokens.colors.warmWhite,
               textDecoration: 'none', padding: '0.75rem 1.75rem', background: tokens.colors.forest, borderRadius: '30px',
             }}>Nos prestations</a>
           </nav>

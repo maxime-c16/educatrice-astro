@@ -14,7 +14,7 @@ export function Expertises() {
   ]
 
   return (
-    <section id="expertises" style={{ padding: '8rem 3rem', background: 'white' }}>
+    <section id="expertises" style={{ padding: '8rem 3rem', background: tokens.colors.white }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <FadeInSection>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>

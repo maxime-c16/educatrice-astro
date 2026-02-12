@@ -41,7 +41,7 @@ export function Hero() {
 
             <h1 style={{
               fontFamily: tokens.fonts.display, fontSize: 'clamp(3rem, 7vw, 5rem)',
-              fontWeight: 800, lineHeight: 1.05, color: 'white', marginBottom: '2rem',
+              fontWeight: 800, lineHeight: 1.05, color: tokens.colors.white, marginBottom: '2rem',
             }}>
               Ingénierie
               <br />
@@ -67,7 +67,7 @@ export function Hero() {
               }}>Nous contacter <span style={{ fontSize: '1.2rem' }}>→</span></a>
               <a href="#manifeste" style={{
                 fontFamily: tokens.fonts.body, fontSize: '0.95rem', fontWeight: 500,
-                color: 'white', textDecoration: 'none', padding: '1rem 2rem',
+                color: tokens.colors.white, textDecoration: 'none', padding: '1rem 2rem',
                 border: `2px solid ${tokens.colors.whiteOpaque30}`,
               }}>En savoir plus</a>
             </div>
@@ -91,7 +91,7 @@ export function Hero() {
                   textAlign: 'center',
                 }}
               >
-                <p style={{ fontFamily: tokens.fonts.display, fontSize: '2.5rem', fontWeight: 800, color: i === 0 ? tokens.colors.royalDark : 'white', lineHeight: 1 }}>
+                <p style={{ fontFamily: tokens.fonts.display, fontSize: '2.5rem', fontWeight: 800, color: i === 0 ? tokens.colors.royalDark : tokens.colors.white, lineHeight: 1 }}>
                   {stat.value}<span style={{ fontSize: '1rem' }}>{stat.unit}</span>
                 </p>
                 <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.75rem', color: i === 0 ? tokens.colors.darkOpaque60 : tokens.colors.whiteOpaque50, marginTop: '0.25rem' }}>{stat.label}</p>

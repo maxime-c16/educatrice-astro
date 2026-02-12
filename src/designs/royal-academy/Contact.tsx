@@ -27,7 +27,7 @@ export function Contact() {
         <FadeInSection delay={0.3}>
           <a href="mailto:contact@aprioris.fr" style={{
             fontFamily: tokens.fonts.body, fontSize: '0.95rem', fontWeight: 500,
-            color: 'white', textDecoration: 'none', padding: '1.25rem 3rem',
+            color: tokens.colors.cream, textDecoration: 'none', padding: '1.25rem 3rem',
             background: tokens.colors.royal, display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
           }}>
             Envoyer un message <span>→</span>

@@ -49,7 +49,7 @@ export function Hero() {
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <a href="#contact" style={{
               fontFamily: tokens.fonts.body, fontSize: '0.9rem', fontWeight: 500,
-              color: 'white', textDecoration: 'none', padding: '1rem 2rem',
+              color: tokens.colors.cream, textDecoration: 'none', padding: '1rem 2rem',
               background: tokens.colors.royal, display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
             }}>
               Prendre rendez-vous <span>→</span>
@@ -78,7 +78,7 @@ export function Hero() {
               background: 'rgba(255,255,255,0.15)',
               display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem',
             }}>
-              <span style={{ fontFamily: tokens.fonts.display, fontSize: '3rem', color: 'white' }}>A</span>
+              <span style={{ fontFamily: tokens.fonts.display, fontSize: '3rem', color: tokens.colors.cream }}>A</span>
             </div>
             <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', textAlign: 'center' }}>
               Photo professionnelle<br />à ajouter
@@ -87,7 +87,7 @@ export function Hero() {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5, duration: 0.8 }}
-          style={{ position: 'absolute', bottom: '15%', left: '5%', background: 'white', padding: '1.5rem', boxShadow: '0 20px 60px rgba(0,0,0,0.1)', zIndex: 10 }}
+          style={{ position: 'absolute', bottom: '15%', left: '5%', background: tokens.colors.cream, padding: '1.5rem', boxShadow: '0 20px 60px rgba(0,0,0,0.1)', zIndex: 10 }}
         >
           <p style={{ fontFamily: tokens.fonts.display, fontSize: '2.5rem', fontWeight: 600, color: tokens.colors.royal, lineHeight: 1 }}>16</p>
           <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.75rem', color: tokens.colors.muted, marginTop: '0.25rem' }}>années d'expérience</p>

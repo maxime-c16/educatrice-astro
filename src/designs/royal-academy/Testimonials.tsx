@@ -23,7 +23,7 @@ export function Testimonials() {
               Scannez le QR code pour laisser un témoignage sur Google
             </p>
             <div style={{
-              width: '120px', height: '120px', background: 'white', margin: '0 auto',
+              width: '120px', height: '120px', background: tokens.colors.cream, margin: '0 auto',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
               <span style={{ fontFamily: tokens.fonts.body, fontSize: '0.6rem', color: tokens.colors.charcoal, textAlign: 'center' }}>QR Code<br />Google Avis</span>

@@ -9,7 +9,7 @@ export function Contact() {
           <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: tokens.colors.accent, marginBottom: '1rem' }}>Contact</div>
           <h2 style={{
             fontFamily: tokens.fonts.display, fontSize: 'clamp(2rem, 4.5vw, 3rem)',
-            fontWeight: 800, color: 'white', marginBottom: '1.5rem',
+            fontWeight: 800, color: tokens.colors.white, marginBottom: '1.5rem',
           }}>
             Parlons de votre <span style={{ color: tokens.colors.accent }}>projet</span>
           </h2>

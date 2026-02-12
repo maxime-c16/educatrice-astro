@@ -3,7 +3,7 @@ import { FadeInSection } from './FadeInSection'
 
 export function Testimonials() {
   return (
-    <section id="testimonials" style={{ padding: '8rem 3rem', background: 'white' }}>
+    <section id="testimonials" style={{ padding: '8rem 3rem', background: tokens.colors.white }}>
       <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
         <FadeInSection>
           <div style={{ fontFamily: tokens.fonts.body, fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: tokens.colors.accent, marginBottom: '1rem' }}>Témoignages</div>

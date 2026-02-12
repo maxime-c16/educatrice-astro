@@ -9,7 +9,7 @@ export function Footer() {
             width: '32px', height: '32px', borderRadius: '50%', background: tokens.colors.royal,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
           }}>
-            <span style={{ fontFamily: tokens.fonts.display, fontSize: '1rem', fontWeight: 600, color: 'white' }}>A</span>
+            <span style={{ fontFamily: tokens.fonts.display, fontSize: '1rem', fontWeight: 600, color: tokens.colors.cream }}>A</span>
           </div>
           <span style={{ fontFamily: tokens.fonts.display, fontSize: '1rem', fontWeight: 500 }}>APRIORIS</span>
         </div>

@@ -54,7 +54,7 @@ export function Hero() {
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="#contact" style={{
                 fontFamily: tokens.fonts.body, fontSize: '0.95rem', fontWeight: 500,
-                color: 'white', textDecoration: 'none', padding: '1rem 2rem',
+                color: tokens.colors.warmWhite, textDecoration: 'none', padding: '1rem 2rem',
                 background: tokens.colors.forest, borderRadius: '30px',
                 display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
               }}>Prendre contact <span>→</span></a>
@@ -86,7 +86,7 @@ export function Hero() {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
               style={{
                 position: 'absolute', bottom: '10%', left: '-15%',
-                background: 'white', padding: '1.25rem 1.5rem', borderRadius: '20px',
+                background: tokens.colors.warmWhite, padding: '1.25rem 1.5rem', borderRadius: '20px',
                 boxShadow: '0 15px 40px rgba(0,0,0,0.1)',
               }}
             >

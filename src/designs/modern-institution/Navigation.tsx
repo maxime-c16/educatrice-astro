@@ -17,10 +17,10 @@ export function Navigation() {
               width: '42px', height: '42px', background: tokens.colors.accent,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
             }}>
-              <span style={{ fontFamily: tokens.fonts.display, fontSize: '1.6rem', fontWeight: 800, color: 'white' }}>A</span>
+              <span style={{ fontFamily: tokens.fonts.display, fontSize: '1.6rem', fontWeight: 800, color: tokens.colors.white }}>A</span>
             </div>
             <div>
-              <span style={{ fontFamily: tokens.fonts.display, fontSize: '1.35rem', fontWeight: 700, color: 'white', letterSpacing: '0.05em', display: 'block', lineHeight: 1.1 }}>APRIORIS</span>
+              <span style={{ fontFamily: tokens.fonts.display, fontSize: '1.35rem', fontWeight: 700, color: tokens.colors.white, letterSpacing: '0.05em', display: 'block', lineHeight: 1.1 }}>APRIORIS</span>
               <span style={{ fontFamily: tokens.fonts.body, fontSize: '0.55rem', fontWeight: 400, letterSpacing: '0.12em', textTransform: 'uppercase', color: tokens.colors.electricLight }}>Ingénierie éducative et inclusive</span>
             </div>
           </a>
@@ -86,7 +86,7 @@ export function Navigation() {
                 onClick={() => setMenuOpen(false)}
                 style={{
                   fontFamily: tokens.fonts.display, fontSize: '2rem',
-                  color: 'white', textDecoration: 'none',
+                  color: tokens.colors.white, textDecoration: 'none',
                 }}
               >
                 {item.label}

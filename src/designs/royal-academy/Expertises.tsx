@@ -25,7 +25,7 @@ export function Expertises() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
           {domains.map((domain, i) => (
             <FadeInSection key={domain.title} delay={i * 0.1}>
-              <div style={{ background: 'white', padding: '2.5rem', height: '100%', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ background: tokens.colors.cream, padding: '2.5rem', height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <span style={{ fontFamily: tokens.fonts.display, fontSize: '2rem', color: tokens.colors.royal, marginBottom: '1.5rem' }}>{domain.icon}</span>
                 <h3 style={{ fontFamily: tokens.fonts.display, fontSize: '1.35rem', fontWeight: 500, color: tokens.colors.charcoal, marginBottom: '0.75rem' }}>{domain.title}</h3>
                 <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.95rem', fontWeight: 300, color: tokens.colors.muted, lineHeight: 1.6, marginBottom: '1.5rem' }}>{domain.desc}</p>
