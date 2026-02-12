@@ -6,25 +6,25 @@ import { useRef } from 'react'
  * Infinitely scrolling text effect
  */
 export function MarqueeText({ text, reverse = false }: { text: string; reverse?: boolean }) {
-  return (
-    <div className="overflow-hidden whitespace-nowrap py-6 border-y border-[#e0ddd7]">
-      <motion.div
-        animate={{ x: reverse ? ['0%', '-50%'] : ['-50%', '0%'] }}
-        transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-        className="inline-block"
-      >
-        {[...Array(10)].map((_, i) => (
-          <span
-            key={i}
-            className="text-6xl md:text-8xl text-[#e0ddd7] mx-8"
-            style={{ fontFamily: "'Bodoni Moda', serif" }}
-          >
-            {text}
-          </span>
-        ))}
-      </motion.div>
-    </div>
-  )
+	return (
+		<div className="overflow-hidden whitespace-nowrap py-6 border-y border-[#e0ddd7]">
+			<motion.div
+				animate={{ x: reverse ? ['0%', '-50%'] : ['-50%', '0%'] }}
+				transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
+				className="inline-block"
+			>
+				{[...Array(10)].map((_, i) => (
+					<span
+						key={i}
+						className="text-6xl md:text-8xl text-[#e0ddd7] mx-8"
+						style={{ fontFamily: "'Bodoni Moda', serif" }}
+					>
+						{text}
+					</span>
+				))}
+			</motion.div>
+		</div>
+	)
 }
 
 /**

@@ -1,5 +1,5 @@
 import { motion, useInView } from 'motion/react'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 
 /**
  * TESTIMONIALS COMPONENT
@@ -9,6 +9,8 @@ export function Testimonials() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
   const [activeIndex, setActiveIndex] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+  const pauseTimerRef = useRef<NodeJS.Timeout | null>(null)
 
   const testimonials = [
     {
@@ -28,8 +30,43 @@ export function Testimonials() {
     }
   ]
 
+  // Auto-scroll effect
+  useEffect(() => {
+    if (isPaused) return
+
+    const autoScrollTimer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % testimonials.length)
+    }, 4000) // Change testimonial every 4 seconds
+
+    return () => clearInterval(autoScrollTimer)
+  }, [isPaused, testimonials.length])
+
+  const handleCardClick = (index: number) => {
+    setActiveIndex(index)
+    setIsPaused(true)
+
+    // Clear existing timer if any
+    if (pauseTimerRef.current) {
+      clearTimeout(pauseTimerRef.current)
+    }
+
+    // Resume auto-scroll after 5 seconds
+    pauseTimerRef.current = setTimeout(() => {
+      setIsPaused(false)
+    }, 5000)
+  }
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (pauseTimerRef.current) {
+        clearTimeout(pauseTimerRef.current)
+      }
+    }
+  }, [])
+
   return (
-    <section className="py-24 md:py-32 bg-[#fffaea]">
+    <section className="py-16 md:py-20 bg-[#fffaea]">
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
@@ -54,17 +91,17 @@ export function Testimonials() {
           </span>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="space-y-8 lg:space-y-10">
           {/* Title */}
           <div>
             <h2 
-              className="text-4xl md:text-5xl text-[#507061] leading-tight mb-8"
+              className="text-3xl md:text-4xl text-[#507061] leading-tight mb-4"
               style={{ fontFamily: "'Bodoni Moda', serif" }}
             >
               Ce que disent les <em className="italic text-[#9eb08b]">familles</em>
             </h2>
             <p 
-              className="text-lg text-[#6b6b6b] leading-relaxed"
+              className="text-base md:text-lg text-[#6b6b6b] leading-relaxed"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
               La confiance que m'accordent les familles est ma plus grande récompense. 
@@ -72,16 +109,19 @@ export function Testimonials() {
             </p>
           </div>
 
+          {/* Separator */}
+          <div className="h-px bg-[#e0ddd7]" />
+
           {/* Testimonial cards */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {testimonials.map((testimonial, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: 30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
-                onClick={() => setActiveIndex(i)}
-                className={`relative p-8 cursor-pointer transition-all ${
+                onClick={() => handleCardClick(i)}
+                className={`relative p-6 cursor-pointer transition-all overflow-visible ${
                   activeIndex === i 
                     ? 'bg-white shadow-lg' 
                     : 'bg-transparent hover:bg-white/50'
@@ -91,12 +131,13 @@ export function Testimonials() {
                 {activeIndex === i && (
                   <motion.div
                     layoutId="activeIndicator"
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
                     className="absolute left-0 top-0 bottom-0 w-1 bg-[#9eb08b]"
                   />
                 )}
 
                 <blockquote 
-                  className="text-lg text-[#4a4a4a] leading-relaxed mb-4"
+                  className="text-base md:text-lg text-[#4a4a4a] leading-relaxed mb-3"
                   style={{ fontFamily: "'DM Sans', sans-serif" }}
                 >
                   "{testimonial.quote}"

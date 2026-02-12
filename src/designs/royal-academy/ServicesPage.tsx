@@ -1,30 +1,6 @@
-/**
- * ROYAL ACADEMY - Services Page — APRIORIS
- * Alternating left/right blocks with pricing sidebar
- */
-
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
-
-const tokens = {
-  colors: {
-    royal: '#1e3a5f',
-    royalLight: '#2d5a8f',
-    navy: '#0f1f33',
-    gold: '#d4a853',
-    goldLight: '#e8c87a',
-    cream: '#faf9f7',
-    creamDark: '#f2f0ed',
-    charcoal: '#1a1a1a',
-    charcoalLight: '#3d3d3d',
-    muted: '#6b6b6b',
-    border: '#e0ddd8',
-  },
-  fonts: {
-    display: "'Playfair Display', Georgia, serif",
-    body: "'IBM Plex Sans', -apple-system, sans-serif",
-  },
-}
+import { tokens } from './tokens'
 
 function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null)

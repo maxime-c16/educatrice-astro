@@ -5,26 +5,7 @@
 
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
-
-const tokens = {
-  colors: {
-    royal: '#1a365d',
-    royalLight: '#2c5282',
-    electric: '#3182ce',
-    accent: '#ed8936',
-    white: '#ffffff',
-    offWhite: '#f7fafc',
-    gray100: '#edf2f7',
-    gray200: '#e2e8f0',
-    gray500: '#718096',
-    gray700: '#4a5568',
-    charcoal: '#1a202c',
-  },
-  fonts: {
-    display: "'DM Sans', 'IBM Plex Sans', -apple-system, sans-serif",
-    body: "'IBM Plex Sans', -apple-system, sans-serif",
-  },
-}
+import { tokens } from './tokens'
 
 function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null)
@@ -65,23 +46,23 @@ function ServiceRow({ number, title, description, features }: {
 }) {
   return (
     <FadeInSection>
-      <div style={{ display: 'grid', gridTemplateColumns: '80px 1fr 250px', gap: '3rem', padding: '3rem 0', borderBottom: `1px solid ${tokens.colors.gray200}` }}>
-        <span style={{ fontFamily: tokens.fonts.display, fontSize: '4rem', fontWeight: 300, color: tokens.colors.gray200, lineHeight: 1 }}>{number}</span>
+      <div style={{ display: 'grid', gridTemplateColumns: '80px 1fr 250px', gap: '3rem', padding: '3rem 0', borderBottom: `1px solid ${tokens.colors.grayLight}` }}>
+        <span style={{ fontFamily: tokens.fonts.display, fontSize: '4rem', fontWeight: 300, color: tokens.colors.grayLight, lineHeight: 1 }}>{number}</span>
         <div>
           <h2 style={{ fontFamily: tokens.fonts.display, fontSize: '1.75rem', fontWeight: 700, color: tokens.colors.charcoal, marginBottom: '1rem' }}>{title}</h2>
-          <p style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', color: tokens.colors.gray700, lineHeight: 1.7, marginBottom: '2rem' }}>{description}</p>
+          <p style={{ fontFamily: tokens.fonts.body, fontSize: '1rem', color: tokens.colors.grayDark, lineHeight: 1.7, marginBottom: '2rem' }}>{description}</p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {features.map((feature) => (
-              <div key={feature} style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.gray500, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div key={feature} style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.grayMid, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <span style={{ color: tokens.colors.accent }}>✓</span>{feature}
               </div>
             ))}
           </div>
         </div>
         <div style={{ background: tokens.colors.gray100, padding: '1.5rem', alignSelf: 'start' }}>
-          <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: tokens.colors.gray500, marginBottom: '0.5rem' }}>Tarification</p>
+          <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.8rem', color: tokens.colors.grayMid, marginBottom: '0.5rem' }}>Tarification</p>
           <p style={{ fontFamily: tokens.fonts.display, fontSize: '1.25rem', fontWeight: 700, color: tokens.colors.charcoal, marginBottom: '0.5rem' }}>Sur devis</p>
-          <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.75rem', color: tokens.colors.gray500 }}>Adapté à votre contexte</p>
+          <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.75rem', color: tokens.colors.grayMid }}>Adapté à votre contexte</p>
         </div>
       </div>
     </FadeInSection>
@@ -90,7 +71,7 @@ function ServiceRow({ number, title, description, features }: {
 
 export function ModernInstitutionServices() {
   return (
-    <div style={{ fontFamily: tokens.fonts.body, background: tokens.colors.white, color: tokens.colors.charcoal, minHeight: '100vh' }}>
+    <div style={{ fontFamily: tokens.fonts.body, background: 'white', color: tokens.colors.charcoal, minHeight: '100vh' }}>
       <Navigation />
 
       {/* Header */}
@@ -136,16 +117,16 @@ export function ModernInstitutionServices() {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ width: '40px', height: '3px', background: tokens.colors.accent, marginBottom: '1.5rem' }} />
           <h2 style={{ fontFamily: tokens.fonts.display, fontSize: '1.5rem', fontWeight: 700, color: tokens.colors.charcoal, marginBottom: '2.5rem' }}>Modalités d'intervention</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: tokens.colors.gray200 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1px', background: tokens.colors.grayLight }}>
             {[
               { title: 'Co-construction', desc: 'Avec les acteurs de terrain et les pratiques existantes' },
               { title: 'Pédagogie active', desc: 'Mise en situation, analyse réflexive, conceptualisation' },
               { title: 'Adaptation', desc: 'Formats et rythmes modulables, ponctuels ou durables' },
               { title: 'Impact', desc: 'Suivi des pratiques, analyse quali/quanti, capitalisation' },
             ].map((item) => (
-              <div key={item.title} style={{ padding: '2rem', background: tokens.colors.white }}>
+              <div key={item.title} style={{ padding: '2rem', background: 'white' }}>
                 <h3 style={{ fontFamily: tokens.fonts.display, fontSize: '1rem', fontWeight: 700, color: tokens.colors.charcoal, marginBottom: '0.5rem' }}>{item.title}</h3>
-                <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', color: tokens.colors.gray500, lineHeight: 1.6 }}>{item.desc}</p>
+                <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.85rem', color: tokens.colors.grayMid, lineHeight: 1.6 }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -153,7 +134,7 @@ export function ModernInstitutionServices() {
       </section>
 
       {/* Ecosystem */}
-      <section style={{ padding: '5rem 3rem', background: tokens.colors.white }}>
+      <section style={{ padding: '5rem 3rem', background: 'white' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ width: '40px', height: '3px', background: tokens.colors.accent, marginBottom: '1.5rem' }} />
           <h2 style={{ fontFamily: tokens.fonts.display, fontSize: '1.5rem', fontWeight: 700, color: tokens.colors.charcoal, marginBottom: '2.5rem' }}>Écosystème professionnel</h2>
@@ -167,7 +148,7 @@ export function ModernInstitutionServices() {
               'Partenariats pédagogiques et experts métiers',
             ].map((partner) => (
               <div key={partner} style={{ padding: '1.25rem', background: tokens.colors.gray100, borderLeft: `3px solid ${tokens.colors.electric}` }}>
-                <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.gray700 }}>{partner}</p>
+                <p style={{ fontFamily: tokens.fonts.body, fontSize: '0.9rem', color: tokens.colors.grayDark }}>{partner}</p>
               </div>
             ))}
           </div>

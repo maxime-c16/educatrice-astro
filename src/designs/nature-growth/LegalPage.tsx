@@ -1,26 +1,5 @@
-/**
- * NATURE GROWTH - Legal Page — APRIORIS
- */
-
 import { motion } from 'motion/react'
-
-const tokens = {
-  colors: {
-    forest: '#2d4a3e',
-    forestLight: '#3d6b5a',
-    terracotta: '#c4856a',
-    sand: '#e8ddd4',
-    cream: '#faf8f5',
-    charcoal: '#2a2a2a',
-    charcoalLight: '#4a4a4a',
-    muted: '#7a7a7a',
-    border: '#e5dfd8',
-  },
-  fonts: {
-    display: "'Playfair Display', Georgia, serif",
-    body: "'IBM Plex Sans', -apple-system, sans-serif",
-  },
-}
+import { tokens } from './tokens'
 
 function Navigation() {
   return (

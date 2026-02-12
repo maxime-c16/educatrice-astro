@@ -1,30 +1,6 @@
-/**
- * NATURE GROWTH - Services Page — APRIORIS
- * Organic cards with emoji, rounded corners
- */
-
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
-
-const tokens = {
-  colors: {
-    forest: '#2d4a3e',
-    forestLight: '#3d6b5a',
-    moss: '#7a9a8a',
-    sage: '#a8c4b8',
-    terracotta: '#c4856a',
-    sand: '#e8ddd4',
-    cream: '#faf8f5',
-    charcoal: '#2a2a2a',
-    charcoalLight: '#4a4a4a',
-    muted: '#7a7a7a',
-    border: '#e5dfd8',
-  },
-  fonts: {
-    display: "'Playfair Display', Georgia, serif",
-    body: "'IBM Plex Sans', -apple-system, sans-serif",
-  },
-}
+import { tokens } from './tokens'
 
 function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef(null)
@@ -97,7 +73,6 @@ export function NatureGrowthServices() {
     <div style={{ fontFamily: tokens.fonts.body, background: tokens.colors.sand, color: tokens.colors.charcoal, minHeight: '100vh' }}>
       <Navigation />
 
-      {/* Header */}
       <section style={{ paddingTop: '140px', paddingBottom: '4rem', paddingLeft: '3rem', paddingRight: '3rem', background: tokens.colors.forest, color: 'white', textAlign: 'center' }}>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <span style={{ fontSize: '3rem', marginBottom: '1rem', display: 'block' }}>🌿</span>
@@ -110,7 +85,6 @@ export function NatureGrowthServices() {
         </motion.div>
       </section>
 
-      {/* Services */}
       <main style={{ maxWidth: '1100px', margin: '0 auto', padding: '4rem 3rem' }}>
         <ServiceCard
           emoji="🔧" title="Ingénierie éducative et inclusive"
@@ -135,7 +109,6 @@ export function NatureGrowthServices() {
         />
       </main>
 
-      {/* Modalités */}
       <section style={{ padding: '4rem 3rem', background: tokens.colors.cream }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
@@ -161,7 +134,6 @@ export function NatureGrowthServices() {
         </div>
       </section>
 
-      {/* Ecosystem */}
       <section style={{ padding: '4rem 3rem', background: tokens.colors.sand }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
@@ -187,7 +159,6 @@ export function NatureGrowthServices() {
         </div>
       </section>
 
-      {/* CTA */}
       <section id="contact" style={{ padding: '5rem 3rem', background: tokens.colors.cream, textAlign: 'center' }}>
         <FadeInSection>
           <span style={{ fontSize: '2.5rem', marginBottom: '1rem', display: 'block' }}>💌</span>

@@ -26,15 +26,15 @@ function ServiceBlock({ number, title, description, details }: ServiceBlockProps
     >
       <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16">
         <div className="grid md:grid-cols-12 gap-6 md:gap-12 lg:gap-16 items-start">
-          {/* Number */}
-          <div className="md:col-span-2">
-            <span 
-              className="text-6xl md:text-7xl text-[#e0ddd7] group-hover:text-[#c2aa6a] transition-colors"
-              style={{ fontFamily: "'Bodoni Moda', serif" }}
-            >
-              {number}
-            </span>
-          </div>
+		  {/* Number */}
+		  <div className="md:col-span-2">
+			<span 
+			  className="text-6xl md:text-7xl text-[#9eb08b] group-hover:text-[#507061] transition-colors font-bold"
+			  style={{ fontFamily: "'Bodoni Moda', serif" }}
+			>
+			  {number}
+			</span>
+		  </div>
           
           {/* Title and description */}
           <div className="md:col-span-5 py-4 md:py-6">
