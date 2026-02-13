@@ -39,7 +39,8 @@ export function Hero() {
           zIndex: 0,
         }}
         initial={{ opacity: 0 }}
-        transition={{ delay: 1, duration: 1 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8, duration: 1.2 }}
       >
         <svg viewBox="0 0 200 400" style={{ height: '100%', width: 'auto' }}>
           <path d="M100 0 Q120 100 100 200 Q80 300 100 400" fill="none" stroke={tokens.colors.olive} strokeWidth="0.5" />
