@@ -26,8 +26,22 @@ export function Hero() {
       }} />
 
       {/* Botanical element */}
-      <motion.div style={{ y, opacity }} initial={{ opacity: 0 }} animate={{ opacity: 0.06 }} transition={{ delay: 1, duration: 1 }}>
-        <svg viewBox="0 0 200 400" style={{ position: 'absolute', right: '5%', top: '10%', height: '80vh', width: 'auto' }}>
+      <motion.div
+        style={{
+          position: 'absolute',
+          right: '3%',
+          top: '10%',
+          height: '80vh',
+          width: 'auto',
+          y,
+          opacity,
+          pointerEvents: 'none',
+          zIndex: 0,
+        }}
+        initial={{ opacity: 0 }}
+        transition={{ delay: 1, duration: 1 }}
+      >
+        <svg viewBox="0 0 200 400" style={{ height: '100%', width: 'auto' }}>
           <path d="M100 0 Q120 100 100 200 Q80 300 100 400" fill="none" stroke={tokens.colors.olive} strokeWidth="0.5" />
           {[50, 100, 150, 200, 250, 300].map((cy, i) => (
             <ellipse key={i} cx={100 + (i % 2 === 0 ? 30 : -30)} cy={cy} rx="40" ry="20"
