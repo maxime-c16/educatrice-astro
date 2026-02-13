@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform, useInView } from 'motion/react'
 import { useRef, useState } from 'react'
+import { tokens } from './tokens'
 
 /**
  * NAVIGATION COMPONENT
@@ -14,13 +15,22 @@ export function Navigation() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed top-0 left-0 right-0 z-50 bg-[#fffaea]/90 backdrop-blur-md"
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md"
+        style={{ background: tokens.colors.whiteOpaque90 }}
       >
-        <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16 py-5 flex items-center justify-between border-b border-[#9eb08b]/30">
+        <div 
+          className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16 py-5 flex items-center justify-between border-b"
+          style={{ borderColor: `${tokens.colors.primaryLight}4d` }}
+        >
           <a href="/" className="group">
             <span 
-              className="text-3xl text-[#507061] group-hover:text-[#9eb08b] transition-colors"
-              style={{ fontFamily: "'Bodoni Moda', serif" }}
+              className="text-3xl transition-colors"
+              style={{ 
+                color: tokens.colors.primary,
+                fontFamily: "'Bodoni Moda', serif" 
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = tokens.colors.primaryLight)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = tokens.colors.primary)}
             >
               É<span className="italic">ducatrice</span>
             </span>
@@ -31,11 +41,19 @@ export function Navigation() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="relative text-xs uppercase tracking-[0.2em] text-[#6b6b6b] hover:text-[#1a1a1a] transition-colors group"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                className="relative text-xs uppercase tracking-[0.2em] transition-colors group"
+                style={{ 
+                  color: tokens.colors.textSecond,
+                  fontFamily: "'DM Sans', sans-serif" 
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = tokens.colors.text)}
+                onMouseLeave={(e) => (e.currentTarget.style.color = tokens.colors.textSecond)}
               >
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#c2aa6a] group-hover:w-full transition-all duration-300" />
+                <span 
+                  className="absolute -bottom-1 left-0 w-0 h-px group-hover:w-full transition-all duration-300"
+                  style={{ background: tokens.colors.accent }}
+                />
               </a>
             ))}
           </div>
@@ -45,9 +63,18 @@ export function Navigation() {
             className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
             aria-label="Toggle menu"
           >
-            <span className={`w-6 h-px bg-[#1a1a1a] transition-transform ${menuOpen ? 'rotate-45 translate-y-1' : ''}`} />
-            <span className={`w-6 h-px bg-[#1a1a1a] transition-opacity ${menuOpen ? 'opacity-0' : ''}`} />
-            <span className={`w-6 h-px bg-[#1a1a1a] transition-transform ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+            <span 
+              className={`w-6 h-px transition-transform ${menuOpen ? 'rotate-45 translate-y-1' : ''}`}
+              style={{ background: tokens.colors.text }}
+            />
+            <span 
+              className={`w-6 h-px transition-opacity ${menuOpen ? 'opacity-0' : ''}`}
+              style={{ background: tokens.colors.text }}
+            />
+            <span 
+              className={`w-6 h-px transition-transform ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}
+              style={{ background: tokens.colors.text }}
+            />
           </button>
         </div>
       </motion.nav>
@@ -56,7 +83,8 @@ export function Navigation() {
       <motion.div
         initial={false}
         animate={{ opacity: menuOpen ? 1 : 0, pointerEvents: menuOpen ? 'auto' : 'none' }}
-        className="fixed inset-0 z-40 bg-[#fffaea] md:hidden flex flex-col items-center justify-center"
+        className="fixed inset-0 z-40 md:hidden flex flex-col items-center justify-center"
+        style={{ background: tokens.colors.background }}
       >
         <div className="space-y-8 text-center">
           {['Manifeste', 'Services', 'Portfolio', 'Contact'].map((item) => (
@@ -64,8 +92,13 @@ export function Navigation() {
               key={item}
               href={`#${item.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
-              className="block text-2xl text-[#507061] hover:text-[#9eb08b] transition-colors"
-              style={{ fontFamily: "'Bodoni Moda', serif" }}
+              className="block text-2xl transition-colors"
+              style={{ 
+                color: tokens.colors.primary,
+                fontFamily: "'Bodoni Moda', serif" 
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = tokens.colors.primaryLight)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = tokens.colors.primary)}
             >
               {item}
             </a>
@@ -86,8 +119,11 @@ export function ProgressBar() {
 
   return (
     <motion.div 
-      className="fixed top-0 left-0 right-0 h-0.5 bg-[#c2aa6a] z-[60] origin-left"
-      style={{ width }}
+      className="fixed top-0 left-0 right-0 h-0.5 z-[60] origin-left"
+      style={{ 
+        background: tokens.colors.accent,
+        width 
+      }}
     />
   )
 }
@@ -103,8 +139,8 @@ export function GridOverlay() {
         className="w-full h-full"
         style={{
           backgroundImage: `
-            linear-gradient(to right, #1a1a1a 1px, transparent 1px),
-            linear-gradient(to bottom, #1a1a1a 1px, transparent 1px)
+            linear-gradient(to right, ${tokens.colors.text} 1px, transparent 1px),
+            linear-gradient(to bottom, ${tokens.colors.text} 1px, transparent 1px)
           `,
           backgroundSize: '80px 80px'
         }}

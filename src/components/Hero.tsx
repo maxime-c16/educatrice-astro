@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
+import { tokens } from './tokens'
 
 /**
  * MARQUEE TEXT COMPONENT
@@ -7,7 +8,10 @@ import { useRef } from 'react'
  */
 export function MarqueeText({ text, reverse = false }: { text: string; reverse?: boolean }) {
 	return (
-		<div className="overflow-hidden whitespace-nowrap py-6 border-y border-[#e0ddd7]">
+		<div 
+			className="overflow-hidden whitespace-nowrap py-6 border-y"
+			style={{ borderColor: tokens.colors.backgroundAlt }}
+		>
 			<motion.div
 				animate={{ x: reverse ? ['0%', '-50%'] : ['-50%', '0%'] }}
 				transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
@@ -16,8 +20,11 @@ export function MarqueeText({ text, reverse = false }: { text: string; reverse?:
 				{[...Array(10)].map((_, i) => (
 					<span
 						key={i}
-						className="text-6xl md:text-8xl text-[#e0ddd7] mx-8"
-						style={{ fontFamily: "'Bodoni Moda', serif" }}
+						className="text-6xl md:text-8xl mx-8"
+						style={{ 
+							color: tokens.colors.backgroundAlt,
+							fontFamily: "'Bodoni Moda', serif" 
+						}}
 					>
 						{text}
 					</span>
@@ -54,8 +61,11 @@ export function Hero() {
         style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg) translateX(50%)' }}
       >
         <span 
-          className="text-xs uppercase tracking-[0.3em] text-[#b8b5ae]"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          className="text-xs uppercase tracking-[0.3em]"
+          style={{ 
+            color: tokens.colors.textSecond,
+            fontFamily: "'DM Sans', sans-serif" 
+          }}
         >
           Éducatrice Montessori · Formatrice
         </span>
@@ -70,8 +80,11 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
-          className="text-xs uppercase tracking-[0.4em] text-[#c2aa6a] mb-8"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          className="text-xs uppercase tracking-[0.4em] mb-8"
+          style={{ 
+            color: tokens.colors.accent,
+            fontFamily: "'DM Sans', sans-serif" 
+          }}
         >
           N° 01 — Printemps 2025
         </motion.p>
@@ -84,10 +97,13 @@ export function Hero() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 + i * 0.1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-block mr-[0.3em] text-5xl md:text-7xl lg:text-8xl text-[#507061] leading-[1.1]"
-              style={{ fontFamily: "'Bodoni Moda', serif" }}
+              className="inline-block mr-[0.3em] text-5xl md:text-7xl lg:text-8xl leading-[1.1]"
+              style={{ 
+                color: tokens.colors.primary,
+                fontFamily: "'Bodoni Moda', serif" 
+              }}
             >
-              {i === 1 ? <em className="italic text-[#9eb08b]">{word}</em> : word}
+              {i === 1 ? <em className="italic" style={{ color: tokens.colors.primaryLight }}>{word}</em> : word}
             </motion.span>
           ))}
         </h1>
@@ -97,8 +113,11 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="max-w-xl mx-auto text-lg md:text-xl text-[#6b6b6b] leading-relaxed mb-12"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          className="max-w-xl mx-auto text-lg md:text-xl leading-relaxed mb-12"
+          style={{ 
+            color: tokens.colors.textSecond,
+            fontFamily: "'DM Sans', sans-serif" 
+          }}
         >
           Un accompagnement sur mesure pour révéler le potentiel unique de chaque enfant, 
           dans le respect de son rythme et de sa personnalité.
@@ -112,8 +131,13 @@ export function Hero() {
           transition={{ delay: 1 }}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          className="inline-flex items-center gap-4 px-10 py-4 bg-[#9eb08b] text-white text-sm uppercase tracking-[0.2em] hover:bg-[#507061] transition-colors shadow-md"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          className="inline-flex items-center gap-4 px-10 py-4 text-white text-sm uppercase tracking-[0.2em] transition-colors shadow-md"
+          style={{ 
+            background: tokens.colors.primaryLight,
+            fontFamily: "'DM Sans', sans-serif" 
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.background = tokens.colors.primary)}
+          onMouseLeave={(e) => (e.currentTarget.style.background = tokens.colors.primaryLight)}
         >
           Prendre rendez-vous
           <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
@@ -128,11 +152,15 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.2, duration: 1 }}
-          className="w-24 h-24 border border-[#c2aa6a] rounded-full flex items-center justify-center"
+          className="w-24 h-24 rounded-full flex items-center justify-center"
+          style={{ border: `1px solid ${tokens.colors.accent}` }}
         >
           <span 
-            className="text-xs uppercase tracking-[0.2em] text-[#c2aa6a]"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            className="text-xs uppercase tracking-[0.2em]"
+            style={{ 
+              color: tokens.colors.accent,
+              fontFamily: "'DM Sans', sans-serif" 
+            }}
           >
             Scroll
           </span>
@@ -147,8 +175,11 @@ export function Hero() {
         className="absolute bottom-8 left-8 md:left-16"
       >
         <span 
-          className="text-xs text-[#b8b5ae] tracking-wider"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          className="text-xs tracking-wider"
+          style={{ 
+            color: tokens.colors.textSecond,
+            fontFamily: "'DM Sans', sans-serif" 
+          }}
         >
           Vol. I · Accompagnement
         </span>

@@ -1,5 +1,6 @@
 import { motion, useInView } from 'motion/react'
 import { useRef, type ReactNode } from 'react'
+import { tokens } from './tokens'
 
 /**
  * SERVICE BLOCK COMPONENT
@@ -22,15 +23,26 @@ function ServiceBlock({ number, title, description, details }: ServiceBlockProps
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="group relative py-16 md:py-20 border-t border-[#9eb08b]/30 hover:bg-[#fffaea] transition-colors"
+      className="group relative py-16 md:py-20 border-t transition-colors"
+      style={{ 
+        borderColor: `${tokens.colors.primaryLight}4d`,
+        '--hover-bg': tokens.colors.background
+      } as React.CSSProperties & { '--hover-bg'?: string }}
+      onMouseEnter={(e) => (e.currentTarget.style.background = tokens.colors.background)}
+      onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
     >
       <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16">
         <div className="grid md:grid-cols-12 gap-6 md:gap-12 lg:gap-16 items-start">
 		  {/* Number */}
 		  <div className="md:col-span-2">
 			<span 
-			  className="text-6xl md:text-7xl text-[#9eb08b] group-hover:text-[#507061] transition-colors font-bold"
-			  style={{ fontFamily: "'Bodoni Moda', serif" }}
+			  className="text-6xl md:text-7xl font-bold transition-colors"
+			  style={{ 
+			    color: tokens.colors.primaryLight,
+			    fontFamily: "'Bodoni Moda', serif" 
+			  }}
+			  onMouseEnter={(e) => (e.currentTarget.style.color = tokens.colors.primary)}
+			  onMouseLeave={(e) => (e.currentTarget.style.color = tokens.colors.primaryLight)}
 			>
 			  {number}
 			</span>
@@ -39,14 +51,20 @@ function ServiceBlock({ number, title, description, details }: ServiceBlockProps
           {/* Title and description */}
           <div className="md:col-span-5 py-4 md:py-6">
             <h3 
-              className="text-2xl md:text-3xl text-[#507061] mb-4"
-              style={{ fontFamily: "'Bodoni Moda', serif" }}
+              className="text-2xl md:text-3xl mb-4"
+              style={{ 
+                color: tokens.colors.primary,
+                fontFamily: "'Bodoni Moda', serif" 
+              }}
             >
               {title}
             </h3>
             <p 
-              className="text-[#6b6b6b] leading-relaxed"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="leading-relaxed"
+              style={{ 
+                color: tokens.colors.textSecond,
+                fontFamily: "'DM Sans', sans-serif" 
+              }}
             >
               {description}
             </p>
@@ -58,10 +76,16 @@ function ServiceBlock({ number, title, description, details }: ServiceBlockProps
               {details.map((detail, i) => (
                 <li 
                   key={i}
-                  className="flex items-start gap-3 text-sm text-[#4a4a4a]"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  className="flex items-start gap-3 text-sm"
+                  style={{ 
+                    color: tokens.colors.textSecond,
+                    fontFamily: "'DM Sans', sans-serif" 
+                  }}
                 >
-                  <span className="w-1.5 h-1.5 mt-2 bg-[#9eb08b] rounded-full flex-shrink-0" />
+                  <span 
+                    className="w-1.5 h-1.5 mt-2 rounded-full flex-shrink-0"
+                    style={{ background: tokens.colors.primaryLight }}
+                  />
                   {detail}
                 </li>
               ))}
@@ -140,15 +164,21 @@ export function Services() {
         <div className="max-w-6xl mx-auto px-8 md:px-12 lg:px-16 mb-16">
           <div className="flex items-center gap-6 mb-12">
             <span 
-              className="text-xs uppercase tracking-[0.3em] text-[#c2aa6a]"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="text-xs uppercase tracking-[0.3em]"
+              style={{ 
+                color: tokens.colors.accent,
+                fontFamily: "'DM Sans', sans-serif" 
+              }}
             >
               02
             </span>
-            <div className="flex-1 h-px bg-[#e0ddd7]" />
+            <div className="flex-1 h-px" style={{ background: tokens.colors.backgroundAlt }} />
             <span 
-              className="text-xs uppercase tracking-[0.3em] text-[#6b6b6b]"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="text-xs uppercase tracking-[0.3em]"
+              style={{ 
+                color: tokens.colors.textSecond,
+                fontFamily: "'DM Sans', sans-serif" 
+              }}
             >
               Services
             </span>
@@ -156,15 +186,21 @@ export function Services() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <h2 
-              className="text-4xl md:text-5xl lg:text-6xl text-[#507061] leading-tight"
-              style={{ fontFamily: "'Bodoni Moda', serif" }}
+              className="text-4xl md:text-5xl lg:text-6xl leading-tight"
+              style={{ 
+                color: tokens.colors.primary,
+                fontFamily: "'Bodoni Moda', serif" 
+              }}
             >
-              Des services <em className="italic text-[#9eb08b]">adaptés</em> à vos besoins
+              Des services <em className="italic" style={{ color: tokens.colors.primaryLight }}>adaptés</em> à vos besoins
             </h2>
             <div className="flex items-end">
               <p 
-                className="text-lg text-[#6b6b6b] leading-relaxed"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                className="text-lg leading-relaxed"
+                style={{ 
+                  color: tokens.colors.textSecond,
+                  fontFamily: "'DM Sans', sans-serif" 
+                }}
               >
                 Chaque accompagnement est pensé sur mesure, 
                 en fonction du profil et des besoins de l'enfant.

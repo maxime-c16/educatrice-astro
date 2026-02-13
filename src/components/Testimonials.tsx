@@ -1,5 +1,6 @@
 import { motion, useInView } from 'motion/react'
 import { useRef, useState, useEffect } from 'react'
+import { tokens } from './tokens'
 
 /**
  * TESTIMONIALS COMPONENT
@@ -66,7 +67,7 @@ export function Testimonials() {
   }, [])
 
   return (
-    <section className="py-16 md:py-20 bg-[#fffaea]">
+    <section className="py-16 md:py-20" style={{ background: tokens.colors.background }}>
       <motion.div
         ref={ref}
         initial={{ opacity: 0 }}
@@ -77,15 +78,21 @@ export function Testimonials() {
         {/* Section header */}
         <div className="flex items-center gap-6 mb-16">
           <span 
-            className="text-xs uppercase tracking-[0.3em] text-[#c2aa6a]"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            className="text-xs uppercase tracking-[0.3em]"
+            style={{ 
+              color: tokens.colors.accent,
+              fontFamily: "'DM Sans', sans-serif" 
+            }}
           >
             04
           </span>
-          <div className="flex-1 h-px bg-[#e0ddd7]" />
+          <div className="flex-1 h-px" style={{ background: tokens.colors.backgroundAlt }} />
           <span 
-            className="text-xs uppercase tracking-[0.3em] text-[#6b6b6b]"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            className="text-xs uppercase tracking-[0.3em]"
+            style={{ 
+              color: tokens.colors.textSecond,
+              fontFamily: "'DM Sans', sans-serif" 
+            }}
           >
             Témoignages
           </span>
@@ -95,14 +102,20 @@ export function Testimonials() {
           {/* Title */}
           <div>
             <h2 
-              className="text-3xl md:text-4xl text-[#507061] leading-tight mb-4"
-              style={{ fontFamily: "'Bodoni Moda', serif" }}
+              className="text-3xl md:text-4xl leading-tight mb-4"
+              style={{ 
+                color: tokens.colors.primary,
+                fontFamily: "'Bodoni Moda', serif" 
+              }}
             >
-              Ce que disent les <em className="italic text-[#9eb08b]">familles</em>
+              Ce que disent les <em className="italic" style={{ color: tokens.colors.primaryLight }}>familles</em>
             </h2>
             <p 
-              className="text-base md:text-lg text-[#6b6b6b] leading-relaxed"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="text-base md:text-lg leading-relaxed"
+              style={{ 
+                color: tokens.colors.textSecond,
+                fontFamily: "'DM Sans', sans-serif" 
+              }}
             >
               La confiance que m'accordent les familles est ma plus grande récompense. 
               Voici quelques témoignages de parents qui ont fait appel à mes services.
@@ -110,7 +123,7 @@ export function Testimonials() {
           </div>
 
           {/* Separator */}
-          <div className="h-px bg-[#e0ddd7]" />
+          <div className="h-px" style={{ background: tokens.colors.backgroundAlt }} />
 
           {/* Testimonial cards */}
           <div className="space-y-4">
@@ -121,37 +134,57 @@ export function Testimonials() {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 onClick={() => handleCardClick(i)}
-                className={`relative p-6 cursor-pointer transition-all overflow-visible ${
-                  activeIndex === i 
-                    ? 'bg-white shadow-lg' 
-                    : 'bg-transparent hover:bg-white/50'
-                }`}
+                className="relative p-6 cursor-pointer transition-all overflow-visible"
+                style={{
+                  background: activeIndex === i ? 'white' : 'transparent',
+                  boxShadow: activeIndex === i ? '0 10px 25px rgba(0,0,0,0.1)' : 'none'
+                }}
+                onMouseEnter={(e) => {
+                  if (activeIndex !== i) {
+                    e.currentTarget.style.background = `${tokens.colors.background}80`
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (activeIndex !== i) {
+                    e.currentTarget.style.background = 'transparent'
+                  }
+                }}
               >
                 {/* Active indicator */}
                 {activeIndex === i && (
                   <motion.div
                     layoutId="activeIndicator"
                     transition={{ duration: 0.6, ease: "easeInOut" }}
-                    className="absolute left-0 top-0 bottom-0 w-1 bg-[#9eb08b]"
+                    className="absolute left-0 top-0 bottom-0 w-1"
+                    style={{ background: tokens.colors.primaryLight }}
                   />
                 )}
 
                 <blockquote 
-                  className="text-base md:text-lg text-[#4a4a4a] leading-relaxed mb-3"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  className="text-base md:text-lg leading-relaxed mb-3"
+                  style={{ 
+                    color: tokens.colors.textSecond,
+                    fontFamily: "'DM Sans', sans-serif" 
+                  }}
                 >
                   "{testimonial.quote}"
                 </blockquote>
                 <footer>
                   <cite 
-                    className="not-italic text-[#507061] font-medium block"
-                    style={{ fontFamily: "'Bodoni Moda', serif" }}
+                    className="not-italic font-medium block"
+                    style={{ 
+                      color: tokens.colors.primary,
+                      fontFamily: "'Bodoni Moda', serif" 
+                    }}
                   >
                     {testimonial.author}
                   </cite>
                   <span 
-                    className="text-sm text-[#6b6b6b]"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    className="text-sm"
+                    style={{ 
+                      color: tokens.colors.textSecond,
+                      fontFamily: "'DM Sans', sans-serif" 
+                    }}
                   >
                     {testimonial.role}
                   </span>

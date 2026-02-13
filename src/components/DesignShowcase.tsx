@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
+import { tokens } from './tokens'
 
 interface Design {
   number: number;
@@ -18,8 +19,8 @@ const designs: Design[] = [
     name: 'Édition Base',
     tagline: 'Editorial classic',
     description: 'Timeless modular design with refined typography and elegant proportions',
-    accent: '#c2aa6a',
-    accent2: '#c2aa6a',
+    accent: tokens.colors.accent,
+    accent2: tokens.colors.accentDark,
     font: "'Bodoni Moda', serif",
     href: '/1'
   },
@@ -152,7 +153,7 @@ export default function DesignShowcase() {
           font-weight: 700;
           letter-spacing: -0.02em;
           margin-bottom: 12px;
-          background: linear-gradient(135deg, #f5f5f5 0%, #c9a962 100%);
+          background: linear-gradient(135deg, #f5f5f5 0%, ${tokens.colors.accentDark} 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
